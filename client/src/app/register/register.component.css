@@ -5,3 +5,7 @@ form {
     margin-left: 25%;
     margin-right:25%;
 }
+
+#cancelbutton {
+    background-color: rgb(226, 225, 216);
+}

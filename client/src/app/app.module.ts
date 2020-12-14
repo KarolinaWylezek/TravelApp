@@ -11,6 +11,10 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { CitiesListComponent } from './cities/cities-list/cities-list.component';
 import { CityDetailsComponent } from './cities/city-details/city-details.component';
+import { TripsComponent } from './trips/trips.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ToastrModule } from 'ngx-toastr';
+import { SharedModule } from './_modules/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,14 +23,17 @@ import { CityDetailsComponent } from './cities/city-details/city-details.compone
     HomeComponent,
     RegisterComponent,
     CitiesListComponent,
-    CityDetailsComponent
+    CityDetailsComponent,
+    TripsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

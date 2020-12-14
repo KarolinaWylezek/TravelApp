@@ -1,8 +1,9 @@
 #register{
     color: white;
-    border: 2px solid green;
-    background-color: green;
+    border: 2px solid rgba(245, 245, 245, 0.719);
+    background-color: rgba(245, 245, 245, 0.849);
     border-radius: 5px;
     padding: 6px 12px;
+    font: black;
     
 }
