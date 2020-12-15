@@ -18,14 +18,14 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Cities>>> GetCities()
+        public async Task<ActionResult<IEnumerable<City>>> GetCities()
         {
             return await _context.Cities.ToListAsync();
 
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Cities>> GetCity(int id)
+        public async Task<ActionResult<City>> GetCity(int id)
         {
             return await _context.Cities.FindAsync(id);
 

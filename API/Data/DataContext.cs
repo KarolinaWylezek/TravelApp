@@ -10,6 +10,6 @@ namespace API.Data
         }
 
         public DbSet<AppUser> Users { get; set; }
-        public DbSet<Cities> Cities { get; set; }
+        public DbSet<City> Cities { get; set; }
     }
 }
