@@ -39,6 +39,7 @@ namespace API.Data
 
              foreach (var city in cities)
             {
+                city.Name = city.Name.ToLower();
                 context.Cities.Add(city);
             }
             await context.SaveChangesAsync();
