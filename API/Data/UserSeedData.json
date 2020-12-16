@@ -1,15 +1,15 @@
 [
     {
       "UserName": "Walls",
-      "UserType": "Aliqua magna ad anim non elit voluptate amet elit. Cupidatat anim voluptate enim aliqua ipsum nulla. Excepteur dolor ut sint nulla laboris officia ipsum Lorem id exercitation excepteur ut.\r\n",
+      "UserType": "member",
       "UserTrips": [
         {
-          "Place": "Ferney",
+          "Place": "Paris",
           "TripDate": "2019-12-30",
           "Attractions": [
             {
-              "Name": "Eu aliquip nisi cillum qui ad sit adipisicing nulla adipisicing Lorem. Laborum voluptate ad consequat sit sit aliqua cillum amet culpa elit adipisicing cillum elit amet. Cupidatat ut aliqua commodo adipisicing excepteur cupidatat eu esse. Mollit ea cillum proident culpa eiusmod reprehenderit commodo veniam.\r\n",
-              "Address": "Aliquip nulla do eiusmod mollit. Amet id eu est sunt magna excepteur fugiat voluptate et. Pariatur magna cillum nisi tempor pariatur incididunt exercitation voluptate aute do culpa ipsum ullamco. Enim ullamco esse quis ipsum in amet ipsum nostrud esse officia. Ullamco aute mollit quis dolor magna officia consequat velit aliquip. Officia non ad amet laborum consectetur sit quis velit. Ut nulla deserunt pariatur culpa.\r\n",
+              "Name": "attraction1",
+              "Address": "street1",
               "Theme": "sport",
               "Subtheme": "baseball"
             }
@@ -19,15 +19,15 @@
     },
     {
       "UserName": "Grant",
-      "UserType": "Ex enim consectetur ipsum tempor deserunt ea irure pariatur est nostrud aliquip. Consequat ad cupidatat ut veniam incididunt adipisicing dolore eu Lorem ut. Proident incididunt sit mollit laboris cupidatat ut elit voluptate aliquip. Est in mollit nisi laboris consectetur cupidatat sunt incididunt.\r\n",
+      "UserType": "member",
       "UserTrips": [
         {
           "Place": "Marion",
           "TripDate": "2019-06-25",
           "Attractions": [
             {
-              "Name": "Aliqua sint est adipisicing laborum sint. Lorem minim ullamco eiusmod aliquip nulla reprehenderit aute qui. Officia ipsum irure nostrud fugiat irure qui esse consectetur anim cupidatat duis cupidatat. Sunt cupidatat amet ad id culpa.\r\n",
-              "Address": "Et magna do sit adipisicing dolore minim eu aute nostrud ut veniam. Consectetur do ea excepteur laborum. Ex occaecat non duis sunt sint adipisicing amet ut. Sunt nisi consectetur id eu. Aliquip ea labore adipisicing officia eu quis quis ex ex. Velit pariatur elit amet mollit laboris sunt aute Lorem exercitation. Eu nisi nisi consectetur aute commodo cupidatat consequat duis fugiat fugiat.\r\n",
+              "Name": "attraction2",
+              "Address": "street2",
               "Theme": "sport",
               "Subtheme": "baseball"
             }
@@ -37,15 +37,15 @@
     },
     {
       "UserName": "Macias",
-      "UserType": "Eiusmod quis do est qui in et deserunt. Incididunt excepteur esse exercitation aliquip et officia velit irure ipsum proident officia officia. Occaecat eiusmod et veniam proident ipsum non anim duis. Exercitation ipsum nostrud nostrud dolor velit amet ipsum voluptate pariatur nostrud. Irure deserunt in exercitation id consectetur id qui dolore do id. Do laboris officia nostrud officia adipisicing nulla elit elit laboris nisi laboris esse.\r\n",
+      "UserType": "member",
       "UserTrips": [
         {
           "Place": "Brule",
           "TripDate": "2020-01-28",
           "Attractions": [
             {
-              "Name": "Eu amet reprehenderit esse reprehenderit tempor anim est proident exercitation est nulla incididunt non. Voluptate cupidatat non ad non consectetur cillum. Veniam veniam ad tempor qui adipisicing eu culpa fugiat ullamco culpa eu exercitation. Labore sint duis excepteur non magna mollit irure et pariatur nostrud quis et nostrud.\r\n",
-              "Address": "Non culpa aliquip ipsum ea duis ullamco pariatur. Aliqua fugiat proident sunt proident velit eiusmod do magna. Dolore magna occaecat id deserunt cillum adipisicing ea magna labore id dolor deserunt reprehenderit occaecat. Consequat laborum qui fugiat anim dolor et sunt occaecat adipisicing et laborum Lorem.\r\n",
+              "Name": "attraction3",
+              "Address": "street3",
               "Theme": "sport",
               "Subtheme": "baseball"
             }
@@ -55,15 +55,15 @@
     },
     {
       "UserName": "Orr",
-      "UserType": "Laborum magna dolore sint exercitation. Adipisicing ipsum dolor aliqua sit velit. Ex qui aute nostrud amet velit dolor do ad.\r\n",
+      "UserType": "member",
       "UserTrips": [
         {
           "Place": "Biddle",
           "TripDate": "2020-01-08",
           "Attractions": [
             {
-              "Name": "Proident et reprehenderit id commodo ea proident duis consectetur velit ex reprehenderit esse deserunt et. Ipsum ullamco sint non voluptate. Eu esse irure cillum est elit sit cupidatat. Veniam eiusmod nostrud esse esse elit commodo sunt nulla ipsum excepteur quis aliqua. Duis aliquip qui ut ut excepteur eiusmod culpa dolor ullamco deserunt velit non nulla ullamco. Ad ex occaecat consequat ipsum adipisicing minim officia mollit aute eiusmod quis.\r\n",
-              "Address": "Do id qui do esse do enim esse aute. Do Lorem incididunt nisi duis. Commodo adipisicing et laborum irure dolor magna. Velit excepteur consectetur magna laborum anim sint enim cillum ut eu ad incididunt proident. Sunt eiusmod qui aliqua Lorem velit nostrud occaecat eu aute commodo amet non in aute.\r\n",
+              "Name": "attraction4",
+              "Address": "street4",
               "Theme": "sport",
               "Subtheme": "baseball"
             }
@@ -73,15 +73,15 @@
     },
     {
       "UserName": "Wall",
-      "UserType": "Aliqua tempor incididunt incididunt minim consequat minim in labore excepteur do quis adipisicing irure sunt. Fugiat cupidatat eu sunt Lorem nostrud excepteur mollit ea quis amet culpa. Laborum ea anim nulla in. Ipsum magna commodo ea minim laborum pariatur nostrud cupidatat consequat consequat duis consectetur do nulla. Ullamco fugiat labore dolor culpa minim. Ea aliqua anim ea aliqua. Est incididunt dolor non mollit duis.\r\n",
+      "UserType": "member",
       "UserTrips": [
         {
           "Place": "Alderpoint",
           "TripDate": "2019-11-30",
           "Attractions": [
             {
-              "Name": "Sint Lorem dolore cupidatat deserunt amet consectetur ea consequat est labore fugiat elit mollit laboris. Culpa tempor sit deserunt ex cupidatat ex mollit ex elit reprehenderit eu. Pariatur veniam enim occaecat Lorem magna eiusmod do pariatur dolore dolore mollit quis quis commodo. Minim eu anim consequat cupidatat.\r\n",
-              "Address": "Culpa non consectetur enim officia anim minim adipisicing occaecat in officia deserunt magna. Nostrud cupidatat eiusmod nulla non reprehenderit sit ut ut excepteur enim ipsum tempor. Voluptate labore reprehenderit pariatur officia commodo proident esse do tempor et eiusmod consequat. Eiusmod minim exercitation commodo fugiat laborum consequat enim. Ex eu fugiat ad nulla. Mollit magna ullamco fugiat dolore nisi dolor non magna pariatur commodo.\r\n",
+              "Name": "attraction5",
+              "Address": "street5",
               "Theme": "sport",
               "Subtheme": "baseball"
             }

@@ -1,0 +1,132 @@
+[
+  {
+    "Name": "New York",
+    "Country": "USA",
+    "Places": [
+      {
+        "Name": "place1",
+        "Address": "street1",
+        "OpenTime": "12",
+        "CloseTime": "22",
+        "Theme": "sport",
+        "Subtheme": "baseball",
+        "Rating": 5.0,
+        "Promotion": false
+      }
+    ],
+    "Events": [
+      {
+        "Name": "event1",
+        "Address": "address2",
+        "StartTime": "2020-05-13T12:00Z",
+        "FinishTime": "2020-05-18T01:00",
+        "Theme": "sport",
+        "Subtheme": "baseball"
+      }
+    ]
+  },
+  {
+    "Name": "London",
+    "Country": "UK",
+    "Places": [
+      {
+        "Name": "place2",
+        "Address": "street3",
+        "OpenTime": "7",
+        "CloseTime": "22",
+        "Theme": "sport",
+        "Subtheme": "basketball",
+        "Rating": 2.0,
+        "Promotion": false
+      }
+    ],
+    "Events": [
+      {
+        "Name": "event4",
+        "Address": "street5",
+        "StartTime": "2020-06-26T10:00Z",
+        "FinishTime": "2020-06-12T11:00Z",
+        "Theme": "sport",
+        "Subtheme": "swimming"
+      }
+    ]
+  },
+  {
+    "Name": "Kiev",
+    "Country": "Ukraine",
+    "Places": [
+      {
+        "Name": "place7",
+        "Address": "street6",
+        "OpenTime": "12",
+        "CloseTime": "22",
+        "Theme": "culture",
+        "Subtheme": "ballet",
+        "Rating": 4.3,
+        "Promotion": false
+      }
+    ],
+    "Events": [
+      {
+        "Name": "event14",
+        "Address": "street14",
+        "StartTime": "2020-05-21T08:00Z",
+        "FinishTime": "2020-06-12T10:00Z",
+        "Theme": "history",
+        "Subtheme": "ww2"
+      }
+    ]
+  },
+  {
+    "Name": "Paris",
+    "Country": "Frnace",
+    "Places": [
+      {
+        "Name": "place16",
+        "Address": "street12",
+        "OpenTime": "7",
+        "CloseTime": "15",
+        "Theme": "culture",
+        "Subtheme": "art",
+        "Rating": 3.6,
+        "Promotion": false
+      }
+    ],
+    "Events": [
+      {
+        "Name": "event9",
+        "Address": "street45",
+        "StartTime": "2020-06-07T11:00Z",
+        "FinishTime": "2020-05-02T01:00Z",
+        "Theme": "sport",
+        "Subtheme": "football"
+      }
+    ]
+  },
+  {
+    "Name": "Rome",
+    "Country": "Italy",
+    "Places": [
+      {
+        "Name": "place100",
+        "Address": "street56",
+        "OpenTime": "7",
+        "CloseTime": "22",
+        "Theme": "history",
+        "Subtheme": "ancient",
+        "Rating": 4.8,
+        "Promotion": false
+      }
+    ],
+    "Events": [
+      {
+        "Name": "event81",
+        "Address": "street23",
+        "StartTime": "2020-06-03T01:00Z",
+        "FinishTime": "2020-05-07T01:00Z",
+        "Theme": "sport",
+        "Subtheme": "baseball"
+      }
+    ]
+  }
+]
