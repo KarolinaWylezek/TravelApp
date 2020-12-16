@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { City } from 'src/app/_models/city';
+import { CitiesService } from 'src/app/_services/cities.service';
 
 @Component({
   selector: 'app-cities-list',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cities-list.component.css']
 })
 export class CitiesListComponent implements OnInit {
+  cities: City[];
 
-  constructor() { }
+  constructor(private citiesService: CitiesService) { }
 
   ngOnInit(): void {
+    this.loadCities();
+  }
+
+  loadCities() {
+    this.citiesService.getCities().subscribe(cities => {
+      this.cities = cities;
+    })
   }
 
 }

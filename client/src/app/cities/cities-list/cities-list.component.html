@@ -1,1 +1,6 @@
-<p>cities-list works!</p>
+<div  class="row">
+    <div class="col-12" *ngFor="let city of cities">
+        <app-city-card [city]="city"></app-city-card>
+    </div>
+    
+</div>

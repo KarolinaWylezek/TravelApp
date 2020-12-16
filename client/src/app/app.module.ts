@@ -15,6 +15,7 @@ import { TripsComponent } from './trips/trips.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './_modules/shared.module';
+import { CityCardComponent } from './cities/city-card/city-card.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SharedModule } from './_modules/shared.module';
     CitiesListComponent,
     CityDetailsComponent,
     TripsComponent,
-    ProfileComponent
+    ProfileComponent,
+    CityCardComponent
   ],
   imports: [
     BrowserModule,
