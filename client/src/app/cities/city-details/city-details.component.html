@@ -1,1 +1,17 @@
-<h1 *ngIf="city" style="color:black;">{{city.name | titlecase}}</h1> 
+<div *ngIf="city">
+    <div>
+        <h1 style="color:black;">{{city.name | titlecase}}</h1> 
+        <h5 style="color:rgb(98, 94, 94);">{{city.country}}, {{city.continent}}</h5>
+    </div>
+
+    <div style="margin-top:50px">
+        <h3 class="mb-0" style="color:black;">About the city</h3>
+        <div class=" mt-3">
+            <div class="mt-3 mb-3">
+                {{city.description}}
+            </div>
+        </div>
+    </div>
+    
+</div>
+

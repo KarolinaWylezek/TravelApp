@@ -5,6 +5,7 @@ export interface City {
   id: number;
   name: string;
   country: string;
+  continent: string;
   description: string;
   places: Place[];
   events: Event[];
