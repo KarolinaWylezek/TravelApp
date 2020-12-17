@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'cities', component: CitiesListComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'cities/:id', component: CityDetailsComponent},
+  {path: 'cities/:name', component: CityDetailsComponent},
   {path: 'trips', component: TripsComponent, canActivate: [AuthGuard]},
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
   {path: '**', component: HomeComponent, pathMatch: 'full'},
