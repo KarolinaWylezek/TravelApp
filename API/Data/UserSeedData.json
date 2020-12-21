@@ -1,6 +1,7 @@
 [
     {
       "UserName": "Walls",
+      "Email": "email1@em.pl",
       "UserType": "member",
       "UserTrips": [
         {
@@ -19,6 +20,7 @@
     },
     {
       "UserName": "Grant",
+      "Email": "email2@em.pl",
       "UserType": "member",
       "UserTrips": [
         {
@@ -37,6 +39,7 @@
     },
     {
       "UserName": "Macias",
+      "Email": "email3@em.pl",
       "UserType": "member",
       "UserTrips": [
         {
@@ -55,6 +58,7 @@
     },
     {
       "UserName": "Orr",
+      "Email": "email4@em.pl",
       "UserType": "member",
       "UserTrips": [
         {
@@ -73,6 +77,7 @@
     },
     {
       "UserName": "Wall",
+      "Email": "email5@em.pl",
       "UserType": "member",
       "UserTrips": [
         {

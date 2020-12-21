@@ -6,16 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { CitiesListComponent } from './cities/cities-list/cities-list.component';
 import { CityDetailsComponent } from './cities/city-details/city-details.component';
 import { TripsComponent } from './trips/trips.component';
 import { ProfileComponent } from './profile/profile.component';
-import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './_modules/shared.module';
 import { CityCardComponent } from './cities/city-card/city-card.component';
+import { EditUsernameComponent } from './edit-username/edit-username.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import { CityCardComponent } from './cities/city-card/city-card.component';
     CityDetailsComponent,
     TripsComponent,
     ProfileComponent,
-    CityCardComponent
+    CityCardComponent,
+    EditUsernameComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +36,7 @@ import { CityCardComponent } from './cities/city-card/city-card.component';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedModule
   ],
   providers: [],

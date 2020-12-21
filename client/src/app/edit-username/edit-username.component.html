@@ -1,0 +1,37 @@
+<h1 style="color:black;">Your Profile</h1>
+
+<div class="col-8"  style="padding-left: 0px; margin-top: 20px;">
+    <div class="alert alert-info" *ngIf="editForm.dirty">
+        <i class="fa fa-warning mr-2"></i><strong>Warning! </strong>You have made changes. Unsaved changes will be lost!
+    </div>
+</div>
+
+
+<div class="row" style="margin-top: 50px;">
+    <div class="col-6 city-icons animate">
+        <form #editForm="ngForm" id="editForm" (ngSubmit)="updateUsername()">
+            <div class="card  mb-1 d-flex">
+                <div class="card-body p-1 form-group d-flex mb-0"  style="margin-top: 8px; margin-left: 10px;">
+             
+                    <div class="mb-0">
+                        <p class="mt-2 mr-3"><strong>Username:   </strong> </p> 
+                    </div>
+                    <div class="mr-auto mb-0">
+                        <textarea [(ngModel)]="user.username" name="username"></textarea>
+                    </div>
+               
+                    
+                    <ul class="list-inline city-icons animate text-right form-group mb-0">
+                        <li class="list-inline-item mt-1">
+                            <button form="editForm" type="submit" class="btn btn-secondary">
+                                <i class="fa fa-save"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+  
+</div>
