@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using API.DTOs;
 using API.Entities;
+using API.Helpers;
 
 namespace API.Interfaces
 {
@@ -12,7 +13,7 @@ namespace API.Interfaces
          Task<IEnumerable<City>> GetCitiesAsync();
          Task<City> GetCityByIdAsync(int id);
          Task<City> GetCityByNameAsync(string name);
-         Task<IEnumerable<CityDto>> GetCitiesDtoAsync();
+         Task<PagedList<CityDto>> GetCitiesDtoAsync(Params cityParams);
          Task<CityDto> GetCityDtoAsync(string name);
     }
 }

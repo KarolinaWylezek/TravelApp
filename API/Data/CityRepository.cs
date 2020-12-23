@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using API.DTOs;
 using API.Entities;
+using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
@@ -25,9 +26,10 @@ namespace API.Data
             return await _context.Cities.Include(e => e.Events).Include(p => p.Places).ToListAsync();
         }
 
-        public async Task<IEnumerable<CityDto>> GetCitiesDtoAsync()
+        public async Task<PagedList<CityDto>> GetCitiesDtoAsync(Params cityParams)
         {
-            return await _context.Cities.ProjectTo<CityDto>(_mapper.ConfigurationProvider).ToListAsync();
+            var query = _context.Cities.ProjectTo<CityDto>(_mapper.ConfigurationProvider).AsNoTracking();
+            return await PagedList<CityDto>.CreateAsync(query, cityParams.pageNumber, cityParams.PageSize);
         }
 
         public async Task<City> GetCityByIdAsync(int id)

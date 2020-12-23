@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using API.Extensions;
+using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -25,9 +27,11 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CityDto>>> GetCities()
+        public async Task<ActionResult<IEnumerable<CityDto>>> GetCities([FromQuery]Params cityParams)
         {
-            var cities = await _cityRepository.GetCitiesDtoAsync();
+            var cities = await _cityRepository.GetCitiesDtoAsync(cityParams);
+
+            Response.AddPaginationHeader(cities.CurrentPage, cities.PageSize, cities.TotalCount, cities.TotalPages);
 
             return Ok(cities);
 
