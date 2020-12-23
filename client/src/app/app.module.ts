@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { SharedModule } from './_modules/shared.module';
 import { CityCardComponent } from './cities/city-card/city-card.component';
 import { EditUsernameComponent } from './edit-username/edit-username.component';
+import { EditEmailComponent } from './edit-email/edit-email.component';
+import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { EditUsernameComponent } from './edit-username/edit-username.component';
     TripsComponent,
     ProfileComponent,
     CityCardComponent,
-    EditUsernameComponent
+    EditUsernameComponent,
+    EditEmailComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,9 @@ import { EditUsernameComponent } from './edit-username/edit-username.component';
     ReactiveFormsModule,
     SharedModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

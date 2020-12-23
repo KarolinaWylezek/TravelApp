@@ -11,8 +11,11 @@ namespace API.Helpers
             CreateMap<City, CityDto>();
             CreateMap<Event, EventDto>();
             CreateMap<Place, PlaceDto>();
-            CreateMap<AppUser, UserDto>();
+            //CreateMap<AppUser, UserDto>();
             CreateMap<RegisterDto, AppUser>();
+            CreateMap<UserUpdateDto, AppUser>();
+            CreateMap<AppUser, MemberDto>();
+            CreateMap<Trip, TripDto>();
         }
     }
 }

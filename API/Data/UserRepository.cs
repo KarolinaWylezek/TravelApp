@@ -30,9 +30,9 @@ namespace API.Data
             return await _context.Users.SingleOrDefaultAsync(x => x.UserName == username);
         }
 
-        public async Task<UserDto> GetUserDtoAsync(string username)
+        public async Task<MemberDto> GetUserDtoAsync(string username)
         {
-            return await _context.Users.Where(x => x.UserName == username).ProjectTo<UserDto>(_mapper.ConfigurationProvider).SingleOrDefaultAsync();
+            return await _context.Users.Where(x => x.UserName == username).ProjectTo<MemberDto>(_mapper.ConfigurationProvider).SingleOrDefaultAsync();
         }
 
         public async Task<IEnumerable<AppUser>> GetUsersAsync()
@@ -40,9 +40,9 @@ namespace API.Data
             return await _context.Users.ToListAsync();
         }
 
-        public async Task<IEnumerable<UserDto>> GetUsersDtoAsync()
+        public async Task<IEnumerable<MemberDto>> GetUsersDtoAsync()
         {
-            return await _context.Users.ProjectTo<UserDto>(_mapper.ConfigurationProvider).ToListAsync();
+            return await _context.Users.ProjectTo<MemberDto>(_mapper.ConfigurationProvider).ToListAsync();
         }
 
         public async Task<bool> SaveAllAsync()
@@ -54,5 +54,6 @@ namespace API.Data
         {
             _context.Entry(user).State = EntityState.Modified;
         }
+        
     }
 }

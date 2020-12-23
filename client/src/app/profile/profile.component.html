@@ -1,13 +1,20 @@
 <h1 style="color:black;">Your Profile</h1>
 
-<div class="row" style="margin-top: 50px;">
+<div *ngIf="member" class="row" style="margin-top: 50px;">
     <div class="col-6 city-icons animate">
         <div class="card  mb-1 d-flex">
             <div class="card-body p-1 form-group d-flex mb-0"  style="margin-top: 10px; margin-left: 10px;">
-                <p class="mr-auto"><strong>Username:   </strong>{{user.username | titlecase}}</p> 
+                <p class="mr-auto"><strong>Username:   </strong>{{member.username | titlecase}}</p> 
+               
+            </div>
+        </div>
+
+        <div class="card  mb-1 d-flex">
+            <div class="card-body p-1 form-group d-flex mb-0"  style="margin-top: 10px; margin-left: 10px;">
+                <p class="mr-auto"><strong>Email:   </strong>{{member.email}}</p> 
                 <ul class="list-inline city-icons animate text-right form-group mb-0">
                     <li class="list-inline-item">
-                        <button routerLink='/profile/editusername' class="btn btn-secondary">
+                        <button routerLink='/profile/editemail' class="btn btn-secondary">
                             <i class="fa fa-edit"></i>
                         </button>
                     </li>

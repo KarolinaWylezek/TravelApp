@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs/operators';
+import { Member } from '../_models/member';
 import { User } from '../_models/user';
 import { AccountService } from '../_services/account.service';
 import { UsersService } from '../_services/users.service';
@@ -10,6 +11,7 @@ import { UsersService } from '../_services/users.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  member: Member;
   user: User;
 
   constructor(private usersService: UsersService, private accountService: AccountService) { 
@@ -21,8 +23,8 @@ export class ProfileComponent implements OnInit {
   }
 
   loadUser() {
-    this.usersService.getUser(this.user.username).subscribe(user => {
-      this.user = user;
+    this.usersService.getUser(this.user.username).subscribe(member => {
+      this.member = member;
     })
   }
 

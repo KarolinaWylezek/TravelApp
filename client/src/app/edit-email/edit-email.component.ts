@@ -9,14 +9,14 @@ import { AccountService } from '../_services/account.service';
 import { UsersService } from '../_services/users.service';
 
 @Component({
-  selector: 'app-edit-username',
-  templateUrl: './edit-username.component.html',
-  styleUrls: ['./edit-username.component.css']
+  selector: 'app-edit-email',
+  templateUrl: './edit-email.component.html',
+  styleUrls: ['./edit-email.component.css']
 })
-export class EditUsernameComponent implements OnInit {
+export class EditEmailComponent implements OnInit {
   @ViewChild('editForm') editForm: NgForm;
-  member: Member;
   user: User;
+  member: Member;
   @HostListener('window:beforeunload', ['$event']) unloadNotification($event: any) {
     if (this.editForm.dirty){
       $event.returnValue = true;
@@ -38,13 +38,13 @@ loadUser()
   })
 }
 
-updateUsername() {
+updateEmail() {
   this.usersService.updateUser(this.member).subscribe(() => {
-    this.toastr.success('Username updated');
+    this.toastr.success('Email updated');
     this.editForm.reset(this.member);
     this.router.navigateByUrl('/profile');
-  });
-
+  })
+  
   
 }
     
