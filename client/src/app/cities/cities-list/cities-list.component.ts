@@ -16,8 +16,8 @@ export class CitiesListComponent implements OnInit {
   cityParams: CityParams;
   countries: string[];
 
-  constructor(private citiesService: CitiesService) { 
-    this.cityParams = new CityParams();
+  constructor(private citiesService: CitiesService) {
+    this.cityParams = this.citiesService.getCityParams();
   }
 
   ngOnInit(): void {
@@ -26,6 +26,7 @@ export class CitiesListComponent implements OnInit {
   }
 
   loadCities() {
+    this.citiesService.setCityParams(this.cityParams);
     this.citiesService.getCities(this.cityParams).subscribe(response => {
       this.cities = response.result;
       this.pagination = response.pagination;
@@ -33,12 +34,13 @@ export class CitiesListComponent implements OnInit {
   }
 
   resetFilters() {
-    this.cityParams = new CityParams();
+    this.cityParams = this.citiesService.resetCityParams();
     this.loadCities();
   }
 
   pageChanged(event: any) {
     this.cityParams.pageNumber = event.page;
+    this.citiesService.setCityParams(this.cityParams);
     this.loadCities();
   }
 

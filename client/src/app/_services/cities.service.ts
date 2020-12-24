@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { City } from '../_models/city'
 import { CityParams } from '../_models/cityParams';
 import { PaginatedResult } from '../_models/pagination';
+import { AccountService } from './account.service';
 
 
 
@@ -16,9 +17,26 @@ export class CitiesService {
   baseUrl = environment.apiUrl;
   cities: City[] = [];
   cityCache = new Map();
+  cityParams: CityParams;
+  city: City;
   
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.cityParams = new CityParams();
+   }
+
+   getCityParams() {
+     return this.cityParams;
+   }
+
+   setCityParams(params: CityParams) {
+     this.cityParams = params;
+   }
+
+   resetCityParams() {
+     this.cityParams = new CityParams();
+     return this.cityParams;
+   }
 
   getCities(cityParams: CityParams) {
 
