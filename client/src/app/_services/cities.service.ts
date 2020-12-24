@@ -15,21 +15,35 @@ import { PaginatedResult } from '../_models/pagination';
 export class CitiesService {
   baseUrl = environment.apiUrl;
   cities: City[] = [];
+  cityCache = new Map();
   
 
   constructor(private http: HttpClient) { }
 
   getCities(cityParams: CityParams) {
+
+    var response = this.cityCache.get(Object.values(cityParams).join('-'));
+    if(response) {
+      return of(response);
+    }
+
     let params = this.getPaginationHeaders(cityParams.pageNumber, cityParams.PageSize);
 
     params = params.append('selectedCountry', cityParams.selectedCountry);
 
-    return this.getPaginatedResult<City[]>(this.baseUrl + 'cities', params);
+    return this.getPaginatedResult<City[]>(this.baseUrl + 'cities', params).pipe(map(response => {
+      this.cityCache.set(Object.values(cityParams).join('-'), response);
+      return response;
+    }))
   }
 
   getCity(name: string)  {
-    const city = this.cities.find(x => x.name === name);
-    if (city !== undefined) return of(city);
+    const city = [...this.cityCache.values()].reduce((arr, elem) => arr.concat(elem.result), []).find((city: City) => city.name === name);
+
+    if(city) {
+      return of(city);
+    }
+  
     return this.http.get<City>(this.baseUrl + 'cities/' + name);
   }
 
