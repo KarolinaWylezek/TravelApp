@@ -56,6 +56,34 @@
     ]
   },
   {
+    "Name": "Glasgow",
+    "Country": "UK",
+    "Continent": "Europe",
+    "Description": "Ut nec tempor magna. Suspendisse vel odio id lacus luctus rutrum nec eu erat. Nullam scelerisque lectus nec orci rutrum aliquet. Nam placerat lacus molestie, dignissim nulla vel, tincidunt nunc. Phasellus vitae eleifend dui, id suscipit diam. Ut ac imperdiet enim, ut tristique libero. Quisque mattis rutrum ex a sagittis. Aliquam sit amet lectus est.",
+    "Places": [
+      {
+        "Name": "place2",
+        "Address": "street3",
+        "OpenTime": "7",
+        "CloseTime": "22",
+        "Theme": "sport",
+        "Subtheme": "basketball",
+        "Rating": 2.0,
+        "Promotion": false
+      }
+    ],
+    "Events": [
+      {
+        "Name": "event4",
+        "Address": "street5",
+        "StartTime": "2020-06-26T10:00Z",
+        "FinishTime": "2020-06-12T11:00Z",
+        "Theme": "sport",
+        "Subtheme": "swimming"
+      }
+    ]
+  },
+  {
     "Name": "Kiev",
     "Country": "Ukraine",
     "Continent": "Europe",
@@ -85,7 +113,7 @@
   },
   {
     "Name": "Paris",
-    "Country": "Frnace",
+    "Country": "France",
     "Continent": "Europe",
     "Description": "Mauris eu dolor erat. Nam eu volutpat velit. Morbi in varius erat, vel tristique nisl. Suspendisse vestibulum volutpat sapien at dictum. Pellentesque mi magna, ultrices ac enim sed, euismod hendrerit odio. In mattis neque a pretium consectetur. Curabitur vitae mauris lorem. Sed eget venenatis ex. In ultrices sodales erat id blandit. Nunc ultricies nibh a massa blandit, vitae porttitor tortor tristique. Nullam fringilla, mauris ut egestas placerat, nunc nisi interdum nulla, nec facilisis dui mauris sed quam. Aliquam ultrices iaculis auctor. Nulla gravida gravida diam ac condimentum. Quisque at orci nec justo porttitor imperdiet sit amet vel tellus. Phasellus aliquet augue sit amet orci facilisis consequat.",
     "Places": [

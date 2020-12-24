@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using API.DTOs;
 using API.Entities;
 using API.Helpers;
+using Microsoft.AspNetCore.Mvc;
 
 namespace API.Interfaces
 {
@@ -15,5 +16,6 @@ namespace API.Interfaces
          Task<City> GetCityByNameAsync(string name);
          Task<PagedList<CityDto>> GetCitiesDtoAsync(Params cityParams);
          Task<CityDto> GetCityDtoAsync(string name);
+         Task<IEnumerable<string>> GetCountriesAsync();
     }
 }

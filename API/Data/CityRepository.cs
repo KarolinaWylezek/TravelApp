@@ -28,8 +28,21 @@ namespace API.Data
 
         public async Task<PagedList<CityDto>> GetCitiesDtoAsync(Params cityParams)
         {
-            var query = _context.Cities.ProjectTo<CityDto>(_mapper.ConfigurationProvider).AsNoTracking();
-            return await PagedList<CityDto>.CreateAsync(query, cityParams.pageNumber, cityParams.PageSize);
+            // var query = _context.Cities.ProjectTo<CityDto>(_mapper.ConfigurationProvider).AsNoTracking();
+            // return await PagedList<CityDto>.CreateAsync(query, cityParams.pageNumber, cityParams.PageSize);
+
+            var query = _context.Cities.AsQueryable();
+            if (cityParams.SelectedCountry == "All") 
+            {
+                 return await PagedList<CityDto>.CreateAsync(query.ProjectTo<CityDto>(_mapper.ConfigurationProvider).AsNoTracking(),
+                cityParams.pageNumber, cityParams.PageSize);
+            }
+
+            query = query.Where(c => c.Country == cityParams.SelectedCountry);
+
+            return await PagedList<CityDto>.CreateAsync(query.ProjectTo<CityDto>(_mapper.ConfigurationProvider).AsNoTracking(),
+                cityParams.pageNumber, cityParams.PageSize);
+            
         }
 
         public async Task<City> GetCityByIdAsync(int id)
@@ -56,5 +69,13 @@ namespace API.Data
         {
             _context.Entry(city).State = EntityState.Modified;
         }
+
+        public async Task<IEnumerable<string>> GetCountriesAsync()
+        {
+            return await _context.Cities.Select(c => c.Country).Distinct().ToListAsync();
+        }
     }
+
+     
+
 }

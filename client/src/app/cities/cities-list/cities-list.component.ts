@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { City } from 'src/app/_models/city';
+import { CityParams } from 'src/app/_models/cityParams';
 import { Pagination } from 'src/app/_models/pagination';
 import { CitiesService } from 'src/app/_services/cities.service';
 
@@ -12,25 +13,40 @@ import { CitiesService } from 'src/app/_services/cities.service';
 export class CitiesListComponent implements OnInit {
   cities:City[];
   pagination: Pagination;
-  pageNumber = 1;
-  pageSize = 3;
+  cityParams: CityParams;
+  countries: string[];
 
-  constructor(private citiesService: CitiesService) { }
+  constructor(private citiesService: CitiesService) { 
+    this.cityParams = new CityParams();
+  }
 
   ngOnInit(): void {
     this.loadCities();
+    this.loadCountries();
   }
 
   loadCities() {
-    this.citiesService.getCities(this.pageNumber, this.pageSize).subscribe(response => {
+    this.citiesService.getCities(this.cityParams).subscribe(response => {
       this.cities = response.result;
       this.pagination = response.pagination;
     })
   }
 
-  pageChanged(event: any) {
-    this.pageNumber = event.page;
+  resetFilters() {
+    this.cityParams = new CityParams();
     this.loadCities();
+  }
+
+  pageChanged(event: any) {
+    this.cityParams.pageNumber = event.page;
+    this.loadCities();
+  }
+
+  loadCountries() {
+    
+   this.citiesService.getCountries(this.cityParams).subscribe(countries => {
+     this.countries = countries;
+   });
   }
 
 }
