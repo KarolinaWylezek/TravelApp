@@ -18,6 +18,7 @@ import { CityCardComponent } from './cities/city-card/city-card.component';
 import { EditUsernameComponent } from './edit-username/edit-username.component';
 import { EditEmailComponent } from './edit-email/edit-email.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { TripCardComponent } from './trip-card/trip-card.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
     ProfileComponent,
     CityCardComponent,
     EditUsernameComponent,
-    EditEmailComponent
+    EditEmailComponent,
+    TripCardComponent
   ],
   imports: [
     BrowserModule,

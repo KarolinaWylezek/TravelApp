@@ -16,6 +16,8 @@ namespace API.Helpers
             CreateMap<UserUpdateDto, AppUser>();
             CreateMap<AppUser, MemberDto>();
             CreateMap<Trip, TripDto>();
+            CreateMap<Trip, UserTripDto>();
+            CreateMap<Attraction, AttractionDto>();
         }
     }
 }

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Member } from '../_models/member';
+import { UserTrip } from '../_models/trip';
 import { User } from '../_models/user';
 
 @Injectable({
@@ -22,6 +23,10 @@ export class UsersService {
 
   updateUser(member: Member) {
     return this.http.put(this.baseUrl + 'users', member);
+  }
+
+  getTrips() {
+    return this.http.get<Partial<UserTrip[]>>(this.baseUrl + 'trips');
   }
 }
 

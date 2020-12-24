@@ -47,7 +47,8 @@ namespace API.Controllers
             {
                 Username = user.UserName,
                 Token = _tokenService.CreateToken(user),
-                Email = user.Email
+                Email = user.Email,
+                Id = user.Id
             };
         }
 
@@ -71,7 +72,8 @@ namespace API.Controllers
             {
                 Username = user.UserName,
                 Token = _tokenService.CreateToken(user),
-                Email = user.Email
+                Email = user.Email,
+                Id = user.Id
             };
         }
 
