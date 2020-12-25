@@ -30,7 +30,8 @@ namespace API.Data
             return await query.Select(query => new TripDto{
                 Id = query.Id,
                 Place = query.Place,
-                TripDate = query.TripDate
+                TripDate = query.TripDate,
+                TripFinishDate = query.TripFinishDate
             }).ToListAsync();
         }
     }

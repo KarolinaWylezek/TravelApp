@@ -4,12 +4,12 @@
             <h5 class="align-text-bottom card-title mb-2 mt-2 ml-4" style="color:black;">
                 {{trip.place}}
             </h5>
-            <h6 class="align-text-bottom card-title mb-2 mt-2 ml-4 mr-auto" style="color:darkgrey;">{{trip.tripDate}}</h6>
+            <h6 class="align-text-bottom card-title mb-2 mt-2 ml-4 mr-auto" style="color:darkgrey;">{{trip.tripDate | date}} - {{trip.tripFinishDate |date}}</h6>
         </div>
         
-         <ul class="list-inline city-icons animate text-right form-group mt-auto mb-auto">
+         <ul class="list-inline city-icons animate text-right form-group mt-auto mb-auto mr-2">
             <li class="list-inline-item">
-                <button class="btn btn-success">
+                <button routerLink='/trips/{{trip.id}}' class="btn btn-success">
                     Details
                 </button>
             </li>

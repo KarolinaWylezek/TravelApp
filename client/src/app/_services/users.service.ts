@@ -30,6 +30,8 @@ export class UsersService {
   getTrips() {
     return this.http.get<Partial<Trip[]>>(this.baseUrl + 'trips');
   }
+
+  getTrip(id: string) {
+    return this.http.get<Trip>(this.baseUrl + 'trips/' + id)
+  }
 }
-
-

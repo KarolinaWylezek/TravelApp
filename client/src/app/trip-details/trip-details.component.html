@@ -1,0 +1,8 @@
+<div>
+    <h3><strong>Place: </strong>{{trip.place | titlecase}}</h3>
+    <h4><strong>Date: </strong>{{trip.tripDate | date}} - {{trip.tripFinishDate}}</h4>
+    <h4><strong>Attractions:</strong></h4>
+    <p *ngFor="let attraction of attractions">
+        {{attraction.name}}
+    </p>
+</div>

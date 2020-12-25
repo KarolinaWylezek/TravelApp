@@ -7,6 +7,7 @@ import { EditUsernameComponent } from './edit-username/edit-username.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
+import { TripDetailsComponent } from './trip-details/trip-details.component';
 import { TripsComponent } from './trips/trips.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'cities', component: CitiesListComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'cities/:name', component: CityDetailsComponent},
+  {path: 'trips/:id', component: TripDetailsComponent},
   {path: 'trips', component: TripsComponent, canActivate: [AuthGuard]},
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
   {path: 'profile/editusername', component: EditUsernameComponent, canActivate: [AuthGuard], canDeactivate: [PreventUnsavedChangesGuard]},
