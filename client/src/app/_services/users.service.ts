@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Member } from '../_models/member';
-import { UserTrip } from '../_models/trip';
+import { Trip } from '../_models/trip';
 import { User } from '../_models/user';
 
 @Injectable({
@@ -10,6 +10,8 @@ import { User } from '../_models/user';
 })
 export class UsersService {
   baseUrl = environment.apiUrl;
+  trip: Trip;
+  trips: Trip[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -26,7 +28,7 @@ export class UsersService {
   }
 
   getTrips() {
-    return this.http.get<Partial<UserTrip[]>>(this.baseUrl + 'trips');
+    return this.http.get<Partial<Trip[]>>(this.baseUrl + 'trips');
   }
 }
 

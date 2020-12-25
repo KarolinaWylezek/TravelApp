@@ -12,6 +12,7 @@
               "Name": "attraction1",
               "Address": "street1",
               "Theme": "sport",
+              "Type": "place",
               "Subtheme": "baseball"
             }
           ]
@@ -31,6 +32,7 @@
               "Name": "attraction2",
               "Address": "street2",
               "Theme": "sport",
+              "Type": "place",
               "Subtheme": "baseball"
             }
           ]
@@ -50,6 +52,7 @@
               "Name": "attraction3",
               "Address": "street3",
               "Theme": "sport",
+              "Type": "place",
               "Subtheme": "baseball"
             }
           ]
@@ -69,6 +72,7 @@
               "Name": "attraction4",
               "Address": "street4",
               "Theme": "sport",
+              "Type": "place",
               "Subtheme": "baseball"
             }
           ]
@@ -88,6 +92,7 @@
               "Name": "attraction5",
               "Address": "street5",
               "Theme": "sport",
+              "Type": "place",
               "Subtheme": "baseball"
             }
           ]

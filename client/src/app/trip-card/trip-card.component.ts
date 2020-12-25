@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { UserTrip } from '../_models/trip';
+import { Trip } from '../_models/trip';
 
 @Component({
   selector: 'app-trip-card',
@@ -7,7 +7,7 @@ import { UserTrip } from '../_models/trip';
   styleUrls: ['./trip-card.component.css']
 })
 export class TripCardComponent implements OnInit {
-  @Input() trip: UserTrip;
+  @Input() trip: Trip;
   constructor() { }
 
   ngOnInit(): void {
