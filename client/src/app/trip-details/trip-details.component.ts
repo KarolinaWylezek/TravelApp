@@ -24,4 +24,9 @@ attractions: Attraction[];
     })
   }
 
+  loadAttractions() {
+    this.userService.getAttractions().subscribe()
+    })
+  }
+
 }

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { Attraction } from '../_models/attraction';
 import { Member } from '../_models/member';
 import { Trip } from '../_models/trip';
 import { User } from '../_models/user';
@@ -33,5 +34,9 @@ export class UsersService {
 
   getTrip(id: string) {
     return this.http.get<Trip>(this.baseUrl + 'trips/' + id)
+  }
+
+  getAttractions(id: string) {
+    return this.http.get<Attraction>(this.baseUrl + 'attractions/' + id)
   }
 }

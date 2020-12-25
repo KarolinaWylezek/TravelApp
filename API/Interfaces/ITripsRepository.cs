@@ -9,5 +9,6 @@ namespace API.Interfaces
     {
          Task<Trip> GetUserTrip(int tripId);
          Task<IEnumerable<TripDto>> GetUserTrips(int userId);
+         Task<IEnumerable<AttractionDto>> GetAttractions(int tripId);
     }
 }
