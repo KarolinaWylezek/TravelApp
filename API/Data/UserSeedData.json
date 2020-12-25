@@ -16,6 +16,32 @@
               "Subtheme": "baseball"
             }
           ]
+        },
+        {
+          "Place": "London",
+          "TripDate": "2019-03-30",
+          "Attractions": [
+            {
+              "Name": "attractionx",
+              "Address": "street1",
+              "Theme": "sport",
+              "Type": "place",
+              "Subtheme": "baseball"
+            }
+          ]
+        },
+        {
+          "Place": "Lviv",
+          "TripDate": "2019-08-30",
+          "Attractions": [
+            {
+              "Name": "attraction1",
+              "Address": "street1",
+              "Theme": "sport",
+              "Type": "place",
+              "Subtheme": "baseball"
+            }
+          ]
         }
       ]
     },

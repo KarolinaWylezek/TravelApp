@@ -2,15 +2,12 @@
     <h2>Your trips</h2>
 </div>
 
-<div class="container mt-3">
-<form #form="ngForm" class="form-inline mb-3" (ngSubmit)="loadTrips()" autocomplete="off">
-    <div  class="row">
-        <div class="col-12" *ngFor="let trip of trips">
-            <app-trip-card [trip]="trip"></app-trip-card>
-        </div>
-        
-        </div>
-</form>
+<div class="row mt-5">
+    <div class="col-6" *ngFor="let trip of trips">
+        <app-trip-card [trip]="trip"></app-trip-card>
+    </div>
+    
 </div>
+
 
 

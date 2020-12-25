@@ -25,9 +25,6 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TripDto>>> GetUserTrips()
         {
-            // var username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            // var user = await _userRepository.GetUserByUsernameAsync(username);
-            // var userId = user.Id;
             var trips = await _tripsRepository.GetUserTrips(User.GetUserId());
 
             return Ok(trips);
