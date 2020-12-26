@@ -11,11 +11,12 @@ import { UsersService } from '../_services/users.service';
 })
 export class TripDetailsComponent implements OnInit {
 trip: Trip;
-attractions: Attraction[];
+attractions: Partial<Attraction[]>;
   constructor(private userService: UsersService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.loadTrip();
+    this.loadAttractions();
   }
 
   loadTrip() {
@@ -25,8 +26,9 @@ attractions: Attraction[];
   }
 
   loadAttractions() {
-    this.userService.getAttractions().subscribe()
+    this.userService.getAttractions(this.route.snapshot.paramMap.get('id')).subscribe(response => {
+      this.attractions = response;
     })
+    }
   }
 
-}

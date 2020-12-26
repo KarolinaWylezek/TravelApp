@@ -11,7 +11,7 @@ import { UsersService } from '../_services/users.service';
   styleUrls: ['./trips.component.css']
 })
 export class TripsComponent implements OnInit {
-  trips: Partial<Trip[]>;
+  trips: Trip[];
   user: User;
 
   constructor(private usersService: UsersService, private accountService: AccountService) { 

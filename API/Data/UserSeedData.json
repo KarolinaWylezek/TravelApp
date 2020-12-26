@@ -10,11 +10,32 @@
           "TripFinishDate": "2020-01-05",
           "Attractions": [
             {
-              "Name": "attraction1",
+              "Name": "eiffel",
               "Address": "street1",
-              "Theme": "sport",
+              "Theme": "culture",
               "Type": "place",
-              "Subtheme": "baseball"
+              "Subtheme": "architecture"
+            },
+            {
+              "Name": "luvr",
+              "Address": "street1",
+              "Theme": "culture",
+              "Type": "place",
+              "Subtheme": "art"
+            },
+            {
+              "Name": "łuk",
+              "Address": "street1",
+              "Theme": "history",
+              "Type": "place",
+              "Subtheme": "architecture"
+            },
+            {
+              "Name": "wersal",
+              "Address": "street1",
+              "Theme": "history",
+              "Type": "place",
+              "Subtheme": "palace"
             }
           ]
         },

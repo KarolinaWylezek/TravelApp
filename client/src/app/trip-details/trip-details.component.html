@@ -1,8 +1,13 @@
-<div>
-    <h3><strong>Place: </strong>{{trip.place | titlecase}}</h3>
-    <h4><strong>Date: </strong>{{trip.tripDate | date}} - {{trip.tripFinishDate}}</h4>
-    <h4><strong>Attractions:</strong></h4>
-    <p *ngFor="let attraction of attractions">
-        {{attraction.name}}
-    </p>
+<div >
+    <h3 style="color: rgb(70, 66, 66);"><strong>Place: </strong>{{trip.place | titlecase}}</h3>
+    <h5 class="mt-4" style="color: rgb(70, 66, 66);"><strong>Date: </strong>{{trip.tripDate | date}} - {{trip.tripFinishDate | date}}</h5>
+    <h5 class="mt-4 mb-3" style="color: rgb(70, 66, 66);"><strong>Attractions you visited:</strong></h5>
+    <ul style="list-style: inside;" >
+        <div *ngFor="let attraction of attractions"><li style="font-size: large; font-weight: bold;">
+            {{attraction.name | titlecase}}
+            <p class="ml-4 mb-0" style="font-size: medium; font-weight: normal;">{{attraction.address}}</p>
+            <p class="ml-4 mt-0" style="font-size: medium; font-weight: normal;"> {{attraction.theme}}, {{attraction.subtheme}}</p>
+        </li> </div>
+        
+    </ul>
 </div>

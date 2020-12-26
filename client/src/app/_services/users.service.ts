@@ -37,6 +37,6 @@ export class UsersService {
   }
 
   getAttractions(id: string) {
-    return this.http.get<Attraction>(this.baseUrl + 'attractions/' + id)
+    return this.http.get<Attraction[]>(this.baseUrl + 'attractions/' + id)
   }
 }
