@@ -9,6 +9,16 @@
             <li class="nav-item" *ngIf="accountService.currentUser$ | async">
               <a class="nav-link" routerLink='/trips' routerLinkActive='active'>Your trips</a>
             </li>
+            <div *ngIf="accountService.currentUser$ | async">
+              <li *appHasRole='["Admin", "Moderator"]' class="nav-item">
+                <a class="nav-link" routerLink='/cities-panel' routerLinkActive='active'>Cities management</a>
+              </li>
+            </div>
+            <div *ngIf="accountService.currentUser$ | async">
+              <li *appHasRole='["Admin"]' class="nav-item">
+                <a class="nav-link" routerLink='/roles' routerLinkActive='active'>User management</a>
+              </li>
+            </div>
           </ul>
           <div class="form-inline mt-2 mt-md-0" autocomplete="off" *ngIf="accountService.currentUser$ | async">
             <ul class="navbar-nav mr-auto">

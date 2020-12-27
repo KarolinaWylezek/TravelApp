@@ -1,0 +1,16 @@
+<h2>Cities Panel</h2>
+<div class="tab-panel mt-4">
+    <tabset class="city-tabs">
+        <tab heading='Attractions management' *appHasRole='["Admin", "Moderator"]'>
+            <div class="container">
+                <app-add-attraction></app-add-attraction>
+            </div>
+        </tab>
+
+        <tab heading='Cities management' *appHasRole='["Admin"]'>
+            <div class="container">
+                <app-add-city></app-add-city>
+            </div>
+        </tab>
+    </tabset>
+</div>

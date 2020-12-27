@@ -1,0 +1,18 @@
+<h2 style="color: black;">User Management</h2>
+
+<div class="container mt-4">
+    <div class="row">
+        <table class="table">
+            <tr>
+                <th style="width: 30%;">Username</th>
+                <th style="width: 40%;">Active roles</th>
+                <th style="width: 30%;"></th>
+            </tr>
+            <tr *ngFor="let user of users">
+                <td>{{user.username}}</td>
+                <td>{{user.roles}}</td>
+                <td><button (click)="openRolesModal(user)" class="btn btn-dark">Edit roles</button></td>
+            </tr>
+        </table>
+    </div>
+</div>

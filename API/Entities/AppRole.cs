@@ -3,10 +3,8 @@ using Microsoft.AspNetCore.Identity;
 
 namespace API.Entities
 {
-    public class AppUser : IdentityUser<int>
+    public class AppRole : IdentityRole<int>
     {
-        public ICollection<Trip> UserTrips { get; set; }
-        
         public ICollection<AppUserRole> UserRoles { get; set; }
     }
 }

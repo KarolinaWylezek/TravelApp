@@ -20,6 +20,12 @@ import { EditEmailComponent } from './edit-email/edit-email.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { TripCardComponent } from './trip-card/trip-card.component';
 import { TripDetailsComponent } from './trip-details/trip-details.component';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { HasRoleDirective } from './_directives/has-role.directive';
+import { CitiesPanelComponent } from './admin/cities-panel/cities-panel.component';
+import { AddAttractionComponent } from './admin/add-attraction/add-attraction.component';
+import { AddCityComponent } from './admin/add-city/add-city.component';
+import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +41,13 @@ import { TripDetailsComponent } from './trip-details/trip-details.component';
     EditUsernameComponent,
     EditEmailComponent,
     TripCardComponent,
-    TripDetailsComponent
+    TripDetailsComponent,
+    AdminPanelComponent,
+    HasRoleDirective,
+    CitiesPanelComponent,
+    AddAttractionComponent,
+    AddCityComponent,
+    RolesModalComponent
   ],
   imports: [
     BrowserModule,
