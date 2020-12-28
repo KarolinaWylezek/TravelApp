@@ -47,6 +47,7 @@ namespace API.Controllers
 
         }
 
+        [Authorize(Policy = "ModerateCitiesRole")]
         [HttpDelete("{name}")]
         public async Task<ActionResult> DeleteCity(string name)
         {
@@ -56,6 +57,33 @@ namespace API.Controllers
 
            return BadRequest("Failed to delete city");
            
+        }
+
+        [Authorize(Policy = "ModerateCitiesRole")]
+        [HttpPost("add-city")]
+        public async Task<ActionResult<City>> AddCity(AddCityDto addCityDto)
+        {
+
+            if (await CityExists(addCityDto.Name)) return BadRequest("City already exists");
+
+           var city = new City
+           {
+               Name = addCityDto.Name.ToLower(),
+               Country = addCityDto.Country,
+               Continent = addCityDto.Continent,
+               Description = addCityDto.Description
+
+           };
+
+           _context.Cities.Add(city);
+           await _context.SaveChangesAsync();
+
+           return city;
+        }
+
+        private async Task<bool> CityExists(string name) 
+        {
+            return await _context.Cities.AnyAsync(x => x.Name == name.ToLower());
         }
     }
 }
