@@ -17,5 +17,6 @@ namespace API.Interfaces
          Task<PagedList<CityDto>> GetCitiesDtoAsync(Params cityParams);
          Task<CityDto> GetCityDtoAsync(string name);
          Task<IEnumerable<string>> GetCountriesAsync();
+         void DeleteCity(string name);
     }
 }

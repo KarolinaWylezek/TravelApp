@@ -26,6 +26,7 @@ import { CitiesPanelComponent } from './admin/cities-panel/cities-panel.componen
 import { AddAttractionComponent } from './admin/add-attraction/add-attraction.component';
 import { AddCityComponent } from './admin/add-city/add-city.component';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
+import { DeleteCityComponent } from './modals/delete-city/delete-city.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { RolesModalComponent } from './modals/roles-modal/roles-modal.component'
     CitiesPanelComponent,
     AddAttractionComponent,
     AddCityComponent,
-    RolesModalComponent
+    RolesModalComponent,
+    DeleteCityComponent
   ],
   imports: [
     BrowserModule,

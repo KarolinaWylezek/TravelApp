@@ -7,6 +7,7 @@ using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
@@ -68,6 +69,12 @@ namespace API.Data
         public void Update(City city)
         {
             _context.Entry(city).State = EntityState.Modified;
+        }
+        
+        public void DeleteCity(string name)
+        {
+            var city = _context.Cities.FirstOrDefault(x => x.Name == name);
+           _context.Cities.Remove(city);
         }
 
         public async Task<IEnumerable<string>> GetCountriesAsync()
