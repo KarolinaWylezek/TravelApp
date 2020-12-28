@@ -1,0 +1,40 @@
+<div>
+    <form [formGroup]='cityForm' (ngSubmit)="cityForm.valid && addCity()" autocomplete="off">
+        <h2 class="text-center text-primary">Add city</h2>
+        <hr>
+        <div class="form-group">
+            <input [class.is-invalid]='cityForm.get("name").errors && cityForm.get("name").touched' 
+            type="text" class="form-control" formControlName='name' placeholder="Name">
+
+            <div class="invalid-feedback">Name is obligatory</div>
+        </div>
+
+        <div class="form-group">
+            <input [class.is-invalid]='cityForm.get("country").errors && cityForm.get("country").touched' 
+            type="text" class="form-control" formControlName='country' placeholder="Country">
+
+            <div *ngIf="cityForm.get('country').hasError('required')" class="invalid-feedback">Country is obligatory</div>
+        </div>
+
+        <div class="form-group">
+            <input [class.is-invalid]='cityForm.get("continent").errors && cityForm.get("continent").touched' 
+            type="text" class="form-control" formControlName='continent' placeholder="Continent">
+
+            <div *ngIf="cityForm.get('continent').hasError('required')" class="invalid-feedback">Continent is obligatory</div>
+        </div>
+
+        <div class="form-group">
+            <input [class.is-invalid]='cityForm.get("description").errors && cityForm.get("description").touched' 
+            type="text" class="form-control" formControlName='description' placeholder="Description">
+
+            <div *ngIf="cityForm.get('description').hasError('required')" class="invalid-feedback">Description is obligatory</div>
+        </div>
+    
+        <div class="form-group text-center" >
+            <button [disabled]='!cityForm.valid' class="btn btn-primary mr-2" type="submit">Save</button>
+            <button class="btn btn-default mr-2" id="cancelbutton" (click)="cancel()" type="button">Cancel</button>
+        </div>
+    </form>
+
+</div>
+

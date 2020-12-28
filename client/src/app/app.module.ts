@@ -27,6 +27,7 @@ import { AddAttractionComponent } from './admin/add-attraction/add-attraction.co
 import { AddCityComponent } from './admin/add-city/add-city.component';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 import { DeleteCityComponent } from './modals/delete-city/delete-city.component';
+import { CityFormComponent } from './admin/city-form/city-form.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { DeleteCityComponent } from './modals/delete-city/delete-city.component'
     AddAttractionComponent,
     AddCityComponent,
     RolesModalComponent,
-    DeleteCityComponent
+    DeleteCityComponent,
+    CityFormComponent
   ],
   imports: [
     BrowserModule,
