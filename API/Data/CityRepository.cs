@@ -81,8 +81,59 @@ namespace API.Data
         {
             return await _context.Cities.Select(c => c.Country).Distinct().ToListAsync();
         }
-    }
 
-     
+        public async Task<IEnumerable<PlaceDto>> GetPlaces(int cityId)
+        {
+            var query = _context.Places.AsQueryable();
+
+            query = query.Where(a => a.CityId == cityId);
+
+            return await query.Select(query => new PlaceDto
+            {
+                Id = query.Id,
+                Name = query.Name,
+                Address = query.Address,
+                OpenTime = query.OpenTime,
+                CloseTime = query.CloseTime,
+                Theme = query.Theme,
+                Subtheme = query.Subtheme,
+                Promotion = query.Promotion
+                
+            }).ToListAsync();
+        }
+
+        public async Task<IEnumerable<EventDto>> GetEvents(int cityId)
+        {
+            var query = _context.Events.AsQueryable();
+
+            query = query.Where(a => a.CityId == cityId);
+
+            return await query.Select(query => new EventDto
+            {
+                Id = query.Id,
+                Name = query.Name,
+                Address = query.Address,
+                StartTime = query.StartTime,
+                FinishTime = query.FinishTime,
+                Theme = query.Theme,
+                Subtheme = query.Subtheme,
+                
+            }).ToListAsync();
+        }
+
+        
+     public void DeletePlace(int placeid)
+        {
+            var place = _context.Places.FirstOrDefault(x => x.Id == placeid);
+           _context.Places.Remove(place);
+        }
+
+        public void DeleteEvent(int eventId)
+        {
+            var eventToDel = _context.Events.FirstOrDefault(x => x.Id == eventId);
+           _context.Events.Remove(eventToDel);
+        }
+
+    }
 
 }

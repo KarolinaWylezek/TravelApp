@@ -18,5 +18,9 @@ namespace API.Interfaces
          Task<CityDto> GetCityDtoAsync(string name);
          Task<IEnumerable<string>> GetCountriesAsync();
          void DeleteCity(string name);
+         Task<IEnumerable<PlaceDto>> GetPlaces(int cityId);
+         Task<IEnumerable<EventDto>> GetEvents(int cityId);
+         public void DeletePlace(int placeid);
+         public void DeleteEvent(int eventId);
     }
 }
