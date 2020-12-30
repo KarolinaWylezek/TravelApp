@@ -1,0 +1,53 @@
+<div>
+    <form [formGroup]='eventForm' (ngSubmit)="eventForm.valid && addEvent()" autocomplete="off">
+        <h2 class="text-center text-primary">Add event</h2>
+        <hr>
+        <div class="form-group">
+            <input [class.is-invalid]='eventForm.get("name").errors && eventForm.get("name").touched' 
+            type="text" class="form-control" formControlName='name' placeholder="Name">
+
+            <div class="invalid-feedback">Name is obligatory</div>
+        </div>
+
+        <div class="form-group">
+            <input [class.is-invalid]='eventForm.get("address").errors && eventForm.get("address").touched' 
+            type="text" class="form-control" formControlName='address' placeholder="Address">
+
+            <div class="invalid-feedback">Address is obligatory</div>
+        </div>
+
+        <div class="form-group">
+            <input [class.is-invalid]='eventForm.get("startTime").errors && eventForm.get("startTime").touched' 
+            type="datetime-local" class="form-control" formControlName='startTime' placeholder="Start Time">
+
+            <div class="invalid-feedback">Beginning time is obligatory</div>
+        </div>
+
+        <div class="form-group">
+            <input [class.is-invalid]='eventForm.get("finishTime").errors && eventForm.get("finishTime").touched' 
+            type="datetime-local" class="form-control" formControlName='finishTime' placeholder="Finish Time">
+
+            <div class="invalid-feedback">Finish time is obligatory</div>
+        </div>
+
+        <div class="form-group">
+            <input [class.is-invalid]='eventForm.get("theme").errors && eventForm.get("theme").touched' 
+            type="text" class="form-control" formControlName='theme' placeholder="Theme">
+
+            <div class="invalid-feedback">Theme is obligatory</div>
+        </div>
+
+        <div class="form-group">
+            <input [class.is-invalid]='eventForm.get("subtheme").errors && eventForm.get("subtheme").touched' 
+            type="text" class="form-control" formControlName='subtheme' placeholder="Subtheme">
+
+            <div class="invalid-feedback">Subtheme is obligatory</div>
+        </div>
+    
+        <div class="form-group text-center" >
+            <button [disabled]='!eventForm.valid' class="btn btn-primary mr-2" type="submit">Save</button>
+            <button class="btn btn-default mr-2" id="cancelbutton" (click)="cancel()" type="button">Cancel</button>
+        </div>
+    </form>
+
+</div>

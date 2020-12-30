@@ -26,7 +26,7 @@
             </tr>
             <tr *ngFor="let city of cities">
                 <td>{{city.name}}</td>
-                <td><button  class="btn btn-dark"><i class="fa fa-angle-right"></i></button></td>
+                <td><button [routerLink]="['/attractions/', city.name]" class="btn btn-dark"><i class="fa fa-angle-right"></i></button></td>
             </tr>
         </table>
     </div>

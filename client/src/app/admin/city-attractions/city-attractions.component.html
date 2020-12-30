@@ -1,0 +1,49 @@
+<div *ngIf="city" class="container mt-4">
+    <button class="btn btn-info" (click)="loadPlaces()">Show places</button>
+    <button class="btn btn-info ml-3" (click)="loadEvents()">Show events</button>
+    <button style="margin-left: 60%;" (click)="refreash()"><i class="fa fa-refresh"></i></button>
+    
+    <div *ngIf="places" class="row mt-4">
+        <table class="table">
+            <tr>
+                <th style="width: 70%; font-size: larger;">Places</th>
+                <th style="width: 30%;"><button [routerLink]="['/add-place/', city.name]"><i class="fa fa-plus"></i></button></th>
+               
+            </tr>
+            <tr *ngFor="let place of places">
+                <td>
+                    <tr><strong>{{place.name | titlecase}}</strong></tr> 
+                    <tr>{{place.address}}</tr>
+                    <tr>Opening hours {{place.openTime}} - {{place.closeTime}}</tr>
+                    <tr>Category: {{place.theme}}, {{place.subtheme}}</tr>
+                    <tr>Rating: {{place.rating}}</tr>
+                </td>
+                <td>
+                    <tr><button class="btn btn-info">Edit</button></tr>
+                    <tr><button (click)="openPlaceModal(place)" class="btn btn-dark mt-2">Delete</button></tr>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div *ngIf="events" class="row mt-4">
+        <table class="table">
+            <tr>
+                <th style="width: 70%; font-size: larger;">Events</th>
+                <th style="width: 30%;"><button [routerLink]="['/add-event/', city.name]"><i class="fa fa-plus"></i></button></th>
+               
+            </tr>
+            <tr *ngFor="let event of events">
+                <td>
+                    <tr><strong>{{event.name}}</strong></tr>
+                    <tr>{{event.address}}</tr>
+                    <tr>Time: {{event.startTime | date:'medium'}} - {{event.finishTime | date:'medium'}}</tr>
+                    <tr>Category: {{event.theme}}, {{event.subtheme}}</tr>
+                </td>
+                <td>
+                    <tr><button class="btn btn-info">Edit</button></tr>
+                    <tr><button (click)="openEventModal(event)" class="btn btn-dark mt-2">Delete</button></tr>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

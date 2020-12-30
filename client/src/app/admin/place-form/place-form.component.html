@@ -1,0 +1,53 @@
+<div>
+    <form [formGroup]='placeForm' (ngSubmit)="placeForm.valid && addPlace()" autocomplete="off">
+        <h2 class="text-center text-primary">Add place</h2>
+        <hr>
+        <div class="form-group">
+            <input [class.is-invalid]='placeForm.get("name").errors && placeForm.get("name").touched' 
+            type="text" class="form-control" formControlName='name' placeholder="Name">
+
+            <div class="invalid-feedback">Name is obligatory</div>
+        </div>
+
+        <div class="form-group">
+            <input [class.is-invalid]='placeForm.get("address").errors && placeForm.get("address").touched' 
+            type="text" class="form-control" formControlName='address' placeholder="Address">
+
+            <div class="invalid-feedback">Address is obligatory</div>
+        </div>
+
+        <div class="form-group">
+            <input [class.is-invalid]='placeForm.get("openTime").errors && placeForm.get("openTime").touched' 
+            type="time" class="form-control" formControlName='openTime' placeholder="Open Time">
+
+            <div class="invalid-feedback">Opening time is obligatory</div>
+        </div>
+
+        <div class="form-group">
+            <input [class.is-invalid]='placeForm.get("closeTime").errors && placeForm.get("closeTime").touched' 
+            type="time" class="form-control" formControlName='closeTime' placeholder="Close Time">
+
+            <div class="invalid-feedback">Closing is obligatory</div>
+        </div>
+
+        <div class="form-group">
+            <input [class.is-invalid]='placeForm.get("theme").errors && placeForm.get("theme").touched' 
+            type="text" class="form-control" formControlName='theme' placeholder="Theme">
+
+            <div class="invalid-feedback">Theme is obligatory</div>
+        </div>
+
+        <div class="form-group">
+            <input [class.is-invalid]='placeForm.get("subtheme").errors && placeForm.get("subtheme").touched' 
+            type="text" class="form-control" formControlName='subtheme' placeholder="Subtheme">
+
+            <div class="invalid-feedback">Subtheme is obligatory</div>
+        </div>
+    
+        <div class="form-group text-center" >
+            <button [disabled]='!placeForm.valid' class="btn btn-primary mr-2" type="submit">Save</button>
+            <button class="btn btn-default mr-2" id="cancelbutton" (click)="cancel()" type="button">Cancel</button>
+        </div>
+    </form>
+
+</div>

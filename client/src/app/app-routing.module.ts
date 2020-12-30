@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { CitiesPanelComponent } from './admin/cities-panel/cities-panel.component';
+import { CityAttractionsComponent } from './admin/city-attractions/city-attractions.component';
 import { CityFormComponent } from './admin/city-form/city-form.component';
+import { EventFormComponent } from './admin/event-form/event-form.component';
+import { PlaceFormComponent } from './admin/place-form/place-form.component';
 import { CitiesListComponent } from './cities/cities-list/cities-list.component';
 import { CityDetailsComponent } from './cities/city-details/city-details.component';
 import { EditEmailComponent } from './edit-email/edit-email.component';
@@ -31,7 +34,10 @@ const routes: Routes = [
       {path: 'profile/editemail', component: EditEmailComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'roles', component: AdminPanelComponent, canActivate: [AdminGuard]},
       {path: 'add-city', component: CityFormComponent, canActivate: [AdminGuard]},
+      {path: 'add-place/:name', component: PlaceFormComponent, canActivate: [ModeratorGuard]},
+      {path: 'add-event/:name', component: EventFormComponent, canActivate: [ModeratorGuard]},
       {path: 'cities-panel', component: CitiesPanelComponent, canActivate: [ModeratorGuard]},
+      {path: 'attractions/:name', component: CityAttractionsComponent, canActivate: [ModeratorGuard]},
     ]
   },
   {path: 'cities', component: CitiesListComponent},

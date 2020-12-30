@@ -28,6 +28,11 @@ import { AddCityComponent } from './admin/add-city/add-city.component';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 import { DeleteCityComponent } from './modals/delete-city/delete-city.component';
 import { CityFormComponent } from './admin/city-form/city-form.component';
+import { CityAttractionsComponent } from './admin/city-attractions/city-attractions.component';
+import { DeletePlaceComponent } from './modals/delete-place/delete-place.component';
+import { DeleteEventComponent } from './modals/delete-event/delete-event.component';
+import { EventFormComponent } from './admin/event-form/event-form.component';
+import { PlaceFormComponent } from './admin/place-form/place-form.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +56,12 @@ import { CityFormComponent } from './admin/city-form/city-form.component';
     AddCityComponent,
     RolesModalComponent,
     DeleteCityComponent,
-    CityFormComponent
+    CityFormComponent,
+    CityAttractionsComponent,
+    DeletePlaceComponent,
+    DeleteEventComponent,
+    EventFormComponent,
+    PlaceFormComponent
   ],
   imports: [
     BrowserModule,
