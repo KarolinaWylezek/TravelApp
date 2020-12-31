@@ -22,5 +22,9 @@ namespace API.Interfaces
          Task<IEnumerable<EventDto>> GetEvents(int cityId);
          public void DeletePlace(int placeid);
          public void DeleteEvent(int eventId);
+         Task<Event> GetEventByIdAsync(int id);
+         Task<Place> GetPlaceByIdAsync(int id);
+         void UpdatePlace(Place place);
+         void UpdateEvent(Event uEvent);
     }
 }

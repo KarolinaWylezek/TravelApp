@@ -39,8 +39,16 @@ export class AdminService {
     return this.http.get<Place[]>(this.baseUrl + 'places/' + cityId);
   }
 
+  getPlace(id: number) {
+    return this.http.get<Place>(this.baseUrl + 'places/place/' + id);
+  }
+
   getEvents(cityId: number) {
     return this.http.get<Event[]>(this.baseUrl + 'events/' + cityId);
+  }
+
+  getEvent(id: number) {
+    return this.http.get<Event>(this.baseUrl + 'events/event/' + id);
   }
 
   deletePlace(id: number) {
@@ -57,5 +65,13 @@ export class AdminService {
 
   addEvent(model: any, CityId: number) {
     return this.http.post(this.baseUrl + 'events/' + CityId + '/add-event/', model);
+  }
+
+  updatePlace(place: Place) {
+    return this.http.put(this.baseUrl + 'places/' + place.id, place);
+  }
+
+  updateEvent(event: Event) {
+    return this.http.put(this.baseUrl + 'events/' + event.id, event);
   }
 }

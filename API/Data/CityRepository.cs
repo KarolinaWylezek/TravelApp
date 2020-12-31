@@ -102,6 +102,11 @@ namespace API.Data
             }).ToListAsync();
         }
 
+        public async Task<Place> GetPlaceByIdAsync(int id)
+        {
+            return await _context.Places.FindAsync(id);
+        }
+
         public async Task<IEnumerable<EventDto>> GetEvents(int cityId)
         {
             var query = _context.Events.AsQueryable();
@@ -121,6 +126,11 @@ namespace API.Data
             }).ToListAsync();
         }
 
+        public async Task<Event> GetEventByIdAsync(int id)
+        {
+            return await _context.Events.FindAsync(id);
+        }
+
         
      public void DeletePlace(int placeid)
         {
@@ -134,6 +144,18 @@ namespace API.Data
            _context.Events.Remove(eventToDel);
         }
 
+         public void UpdatePlace(Place place)
+        {
+            _context.Entry(place).State = EntityState.Modified;
+        }
+
+         public void UpdateEvent(Event uEvent)
+        {
+            _context.Entry(uEvent).State = EntityState.Modified;
+        }
+
     }
+
+    
 
 }

@@ -19,7 +19,7 @@
                     <tr>Rating: {{place.rating}}</tr>
                 </td>
                 <td>
-                    <tr><button class="btn btn-info">Edit</button></tr>
+                    <tr><button [routerLink]="['/edit-place/', place.id]" class="btn btn-info">Edit</button></tr>
                     <tr><button (click)="openPlaceModal(place)" class="btn btn-dark mt-2">Delete</button></tr>
                 </td>
             </tr>
@@ -40,7 +40,7 @@
                     <tr>Category: {{event.theme}}, {{event.subtheme}}</tr>
                 </td>
                 <td>
-                    <tr><button class="btn btn-info">Edit</button></tr>
+                    <tr><button [routerLink]="['/edit-event/', event.id]" class="btn btn-info">Edit</button></tr>
                     <tr><button (click)="openEventModal(event)" class="btn btn-dark mt-2">Delete</button></tr>
                 </td>
             </tr>

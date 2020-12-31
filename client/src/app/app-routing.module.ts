@@ -4,6 +4,8 @@ import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { CitiesPanelComponent } from './admin/cities-panel/cities-panel.component';
 import { CityAttractionsComponent } from './admin/city-attractions/city-attractions.component';
 import { CityFormComponent } from './admin/city-form/city-form.component';
+import { EditEventComponent } from './admin/edit-event/edit-event.component';
+import { EditPlaceComponent } from './admin/edit-place/edit-place.component';
 import { EventFormComponent } from './admin/event-form/event-form.component';
 import { PlaceFormComponent } from './admin/place-form/place-form.component';
 import { CitiesListComponent } from './cities/cities-list/cities-list.component';
@@ -36,6 +38,8 @@ const routes: Routes = [
       {path: 'add-city', component: CityFormComponent, canActivate: [AdminGuard]},
       {path: 'add-place/:name', component: PlaceFormComponent, canActivate: [ModeratorGuard]},
       {path: 'add-event/:name', component: EventFormComponent, canActivate: [ModeratorGuard]},
+      {path: 'edit-place/:id', component: EditPlaceComponent, canActivate: [ModeratorGuard], canDeactivate: [PreventUnsavedChangesGuard]},
+      {path: 'edit-event/:id', component: EditEventComponent, canActivate: [ModeratorGuard], canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'cities-panel', component: CitiesPanelComponent, canActivate: [ModeratorGuard]},
       {path: 'attractions/:name', component: CityAttractionsComponent, canActivate: [ModeratorGuard]},
     ]

@@ -55,6 +55,15 @@ namespace API.Controllers
             return place;
         }
 
+        [HttpGet("place/{id}")]
+        public async Task<ActionResult<PlaceDto>> GetSinglePlace(int id)
+        {
+            var place = await _cityRepository.GetPlaceByIdAsync(id);
+
+            return _mapper.Map<PlaceDto>(place);
+           
+        }
+
         [Authorize(Policy = "ModerateCitiesRole")]
         [HttpDelete("delete-place/{id}")]
         public async Task<ActionResult> DeletePlace(int id)
@@ -65,6 +74,20 @@ namespace API.Controllers
 
            return BadRequest("Failed to delete place");
            
+        }
+
+        [HttpPut("{placeId}")]
+        public async Task<ActionResult> UpdatePlace(PlaceEditDto placeEditDto, int placeId)
+        {
+            var place = await _cityRepository.GetPlaceByIdAsync(placeId);
+
+            _mapper.Map(placeEditDto, place);
+
+           _cityRepository.UpdatePlace(place);
+
+           if (await _cityRepository.SaveAllAsync()) return NoContent();
+
+           return BadRequest("Failed to update");
         }
     }
 }

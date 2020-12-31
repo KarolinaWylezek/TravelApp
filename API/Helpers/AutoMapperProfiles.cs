@@ -18,6 +18,8 @@ namespace API.Helpers
             CreateMap<Trip, TripDto>();
             CreateMap<Trip, UserTripDto>();
             CreateMap<Attraction, AttractionDto>();
+            CreateMap<EventEditDto, Event>();
+            CreateMap<PlaceEditDto, Place>();
         }
     }
 }

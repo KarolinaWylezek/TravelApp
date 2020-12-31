@@ -33,6 +33,8 @@ import { DeletePlaceComponent } from './modals/delete-place/delete-place.compone
 import { DeleteEventComponent } from './modals/delete-event/delete-event.component';
 import { EventFormComponent } from './admin/event-form/event-form.component';
 import { PlaceFormComponent } from './admin/place-form/place-form.component';
+import { EditPlaceComponent } from './admin/edit-place/edit-place.component';
+import { EditEventComponent } from './admin/edit-event/edit-event.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { PlaceFormComponent } from './admin/place-form/place-form.component';
     DeletePlaceComponent,
     DeleteEventComponent,
     EventFormComponent,
-    PlaceFormComponent
+    PlaceFormComponent,
+    EditPlaceComponent,
+    EditEventComponent
   ],
   imports: [
     BrowserModule,
