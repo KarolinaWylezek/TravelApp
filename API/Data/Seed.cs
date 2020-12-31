@@ -60,5 +60,21 @@ namespace API.Data
             await context.SaveChangesAsync();
 
         }
+
+         public static async Task SeedCategories(DataContext context)
+        {
+            if (await context.Categories.AnyAsync()) return;
+
+            var categoryData = await System.IO.File.ReadAllTextAsync("Data/CategorySeedData.json");
+            var categories = JsonSerializer.Deserialize<List<Category>>(categoryData);
+
+             foreach (var category in categories)
+            {
+                category.Name = category.Name.ToLower();
+                context.Categories.Add(category);
+            }
+            await context.SaveChangesAsync();
+
+        }
     }
 }

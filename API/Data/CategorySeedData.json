@@ -1,0 +1,74 @@
+[
+    {
+      "Name": "sport",
+      "Subcategories": [
+        {
+          "Name": "team sports"
+        },
+        {
+            "Name": "acrobatics"
+        },
+        {
+            "Name": "athletics"
+        },
+        {
+            "Name": "water sports"
+        }
+
+    ]
+    },
+    {
+        "Name": "culture",
+        "Subcategories": [
+          {
+            "Name": "modern art"
+          },
+          {
+              "Name": "art"
+          },
+          {
+              "Name": "literature"
+          },
+          {
+              "Name": "theatre"
+          }
+  
+      ]
+      },
+      {
+        "Name": "history",
+        "Subcategories": [
+          {
+            "Name": "world war 2"
+          },
+          {
+              "Name": "prehistory"
+          },
+          {
+              "Name": "ancient"
+          },
+          {
+              "Name": "middle ages"
+          }
+  
+      ]
+      },
+      {
+        "Name": "architecture",
+        "Subcategories": [
+          {
+            "Name": "palace"
+          },
+          {
+              "Name": "modern architecture"
+          },
+          {
+              "Name": "ancient"
+          },
+          {
+              "Name": "renaissance"
+          }
+  
+      ]
+      }
+    ]

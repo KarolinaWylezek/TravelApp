@@ -8,4 +8,5 @@ export interface Place {
     subtheme: string;
     rating: number;
     promotion: boolean;
+    expectedTimeSpent: string;
   }

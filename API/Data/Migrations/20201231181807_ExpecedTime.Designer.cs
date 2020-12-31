@@ -3,14 +3,16 @@ using System;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20201231181807_ExpecedTime")]
+    partial class ExpecedTime
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -154,20 +156,6 @@ namespace API.Data.Migrations
                     b.ToTable("Attractions");
                 });
 
-            modelBuilder.Entity("API.Entities.Category", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Categories");
-                });
-
             modelBuilder.Entity("API.Entities.City", b =>
                 {
                     b.Property<int>("Id")
@@ -269,25 +257,6 @@ namespace API.Data.Migrations
                     b.HasIndex("CityId");
 
                     b.ToTable("Places");
-                });
-
-            modelBuilder.Entity("API.Entities.Subcategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("Subcategories");
                 });
 
             modelBuilder.Entity("API.Entities.Trip", b =>
@@ -451,17 +420,6 @@ namespace API.Data.Migrations
                     b.Navigation("City");
                 });
 
-            modelBuilder.Entity("API.Entities.Subcategory", b =>
-                {
-                    b.HasOne("API.Entities.Category", "Category")
-                        .WithMany("Subcategories")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-                });
-
             modelBuilder.Entity("API.Entities.Trip", b =>
                 {
                     b.HasOne("API.Entities.AppUser", "AppUser")
@@ -519,11 +477,6 @@ namespace API.Data.Migrations
                     b.Navigation("UserRoles");
 
                     b.Navigation("UserTrips");
-                });
-
-            modelBuilder.Entity("API.Entities.Category", b =>
-                {
-                    b.Navigation("Subcategories");
                 });
 
             modelBuilder.Entity("API.Entities.City", b =>

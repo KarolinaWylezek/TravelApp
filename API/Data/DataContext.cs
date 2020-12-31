@@ -17,6 +17,8 @@ namespace API.Data
         public DbSet<Attraction> Attractions { get; set; }
         public DbSet<Place> Places { get; set; }
         public DbSet<Event> Events { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Subcategory> Subcategories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

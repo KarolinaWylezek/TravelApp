@@ -6,4 +6,5 @@ export interface Event {
     finishTime: Date;
     theme: string;
     subtheme: string;
+    expectedTimeSpent: string;
   }

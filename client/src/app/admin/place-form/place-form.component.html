@@ -31,6 +31,14 @@
         </div>
 
         <div class="form-group">
+            <input [class.is-invalid]='placeForm.get("expectedTimeSpent").errors && placeForm.get("expectedTimeSpent").touched' 
+            type="time" class="form-control" formControlName='expectedTimeSpent' placeholder="Expected time spent">
+
+            <div class="invalid-feedback">Expected time spent is obligatory</div>
+        </div>
+
+
+        <div class="form-group">
             <input [class.is-invalid]='placeForm.get("theme").errors && placeForm.get("theme").touched' 
             type="text" class="form-control" formControlName='theme' placeholder="Theme">
 

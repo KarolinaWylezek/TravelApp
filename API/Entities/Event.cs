@@ -13,6 +13,7 @@ namespace API.Entities
         public DateTime FinishTime { get; set; }
         public string Theme { get; set; }
         public string Subtheme { get; set; }
+        public string ExpectedTimeSpent { get; set; }
         public City City { get; set; }
         public int CityId { get; set; }
     }

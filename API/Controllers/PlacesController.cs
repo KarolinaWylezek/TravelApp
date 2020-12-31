@@ -45,6 +45,7 @@ namespace API.Controllers
                 Theme = addPlaceDto.Theme,
                 Subtheme = addPlaceDto.Subtheme,
                 Promotion = true,
+                ExpectedTimeSpent = addPlaceDto.ExpectedTimeSpent,
                 CityId = cityId
 
             };

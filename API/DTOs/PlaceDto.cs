@@ -11,5 +11,6 @@ namespace API.DTOs
         public string Subtheme { get; set; }
         public double Rating { get; set; }
         public bool Promotion { get; set; }
+        public string ExpectedTimeSpent { get; set; }
     }
 }

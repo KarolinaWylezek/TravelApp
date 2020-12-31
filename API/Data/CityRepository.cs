@@ -97,7 +97,8 @@ namespace API.Data
                 CloseTime = query.CloseTime,
                 Theme = query.Theme,
                 Subtheme = query.Subtheme,
-                Promotion = query.Promotion
+                Promotion = query.Promotion,
+                ExpectedTimeSpent = query.ExpectedTimeSpent
                 
             }).ToListAsync();
         }
@@ -122,6 +123,7 @@ namespace API.Data
                 FinishTime = query.FinishTime,
                 Theme = query.Theme,
                 Subtheme = query.Subtheme,
+                ExpectedTimeSpent = query.ExpectedTimeSpent
                 
             }).ToListAsync();
         }

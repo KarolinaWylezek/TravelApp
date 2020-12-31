@@ -15,6 +15,7 @@ namespace API.Entities
         public string Subtheme { get; set; }
         public double Rating { get; set; }
         public bool Promotion { get; set; }
+        public string ExpectedTimeSpent { get; set; }
         public City City { get; set; }
         public int CityId { get; set; }
     }

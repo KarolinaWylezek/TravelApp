@@ -30,6 +30,7 @@ export class PlaceFormComponent implements OnInit {
       closeTime: new FormControl('', Validators.required),
       theme: new FormControl('', Validators.required),
       subtheme: new FormControl('', Validators.required),
+      expectedTimeSpent: new FormControl('', Validators.required),
     })
   }
 

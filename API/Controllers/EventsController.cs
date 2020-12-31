@@ -51,6 +51,7 @@ namespace API.Controllers
                 FinishTime = addEventDto.FinishTime,
                 Theme = addEventDto.Theme,
                 Subtheme = addEventDto.Subtheme,
+                ExpectedTimeSpent = addEventDto.ExpectedTimeSpent,
                 CityId = cityId
 
             };

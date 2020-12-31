@@ -15,6 +15,7 @@
                     <tr><strong>{{place.name | titlecase}}</strong></tr> 
                     <tr>{{place.address}}</tr>
                     <tr>Opening hours {{place.openTime}} - {{place.closeTime}}</tr>
+                    <tr>Expected time spent: {{place.expectedTimeSpent}}</tr>
                     <tr>Category: {{place.theme}}, {{place.subtheme}}</tr>
                     <tr>Rating: {{place.rating}}</tr>
                 </td>
@@ -37,6 +38,7 @@
                     <tr><strong>{{event.name}}</strong></tr>
                     <tr>{{event.address}}</tr>
                     <tr>Time: {{event.startTime | date:'medium'}} - {{event.finishTime | date:'medium'}}</tr>
+                    <tr>Expected time spent: {{event.expectedTimeSpent}}</tr>
                     <tr>Category: {{event.theme}}, {{event.subtheme}}</tr>
                 </td>
                 <td>

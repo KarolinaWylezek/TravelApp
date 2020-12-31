@@ -30,6 +30,7 @@ export class EventFormComponent implements OnInit {
       finishTime: new FormControl('', Validators.required),
       theme: new FormControl('', Validators.required),
       subtheme: new FormControl('', Validators.required),
+      expectedTimeSpent: new FormControl('', Validators.required),
     })
   }
 

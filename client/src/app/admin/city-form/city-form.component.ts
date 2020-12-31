@@ -22,7 +22,7 @@ export class CityFormComponent implements OnInit {
       name: new FormControl('', Validators.required),
       country: new FormControl('', Validators.required),
       continent: new FormControl('', Validators.required),
-      description: new FormControl('', Validators.required)
+      description: new FormControl('', Validators.required),
     })
   }
 

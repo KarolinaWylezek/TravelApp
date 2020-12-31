@@ -13,7 +13,8 @@
         "Theme": "sport",
         "Subtheme": "baseball",
         "Rating": 5.0,
-        "Promotion": false
+        "Promotion": false,
+        "ExpectedTimeSpent": "2:00"
       }
     ],
     "Events": [
@@ -23,7 +24,8 @@
         "StartTime": "2020-05-13T12:00Z",
         "FinishTime": "2020-05-18T01:00",
         "Theme": "sport",
-        "Subtheme": "baseball"
+        "Subtheme": "baseball",
+        "ExpectedTimeSpent": "1:00"
       }
     ]
   },
@@ -41,7 +43,8 @@
         "Theme": "sport",
         "Subtheme": "basketball",
         "Rating": 2.0,
-        "Promotion": false
+        "Promotion": false,
+        "ExpectedTimeSpent": "2:30"
       }
     ],
     "Events": [
@@ -51,7 +54,8 @@
         "StartTime": "2020-06-26T10:00Z",
         "FinishTime": "2020-06-12T11:00Z",
         "Theme": "sport",
-        "Subtheme": "swimming"
+        "Subtheme": "swimming",
+        "ExpectedTimeSpent": "2:00"
       }
     ]
   },
@@ -69,7 +73,8 @@
         "Theme": "sport",
         "Subtheme": "basketball",
         "Rating": 2.0,
-        "Promotion": false
+        "Promotion": false,
+        "ExpectedTimeSpent": "00:30"
       }
     ],
     "Events": [
@@ -79,7 +84,8 @@
         "StartTime": "2020-06-26T10:00Z",
         "FinishTime": "2020-06-12T11:00Z",
         "Theme": "sport",
-        "Subtheme": "swimming"
+        "Subtheme": "swimming",
+        "ExpectedTimeSpent": "2:00"
       }
     ]
   },
@@ -97,7 +103,8 @@
         "Theme": "culture",
         "Subtheme": "ballet",
         "Rating": 4.3,
-        "Promotion": false
+        "Promotion": false,
+        "ExpectedTimeSpent": "2:00"
       }
     ],
     "Events": [
@@ -107,7 +114,8 @@
         "StartTime": "2020-05-21T08:00Z",
         "FinishTime": "2020-06-12T10:00Z",
         "Theme": "history",
-        "Subtheme": "ww2"
+        "Subtheme": "ww2",
+        "ExpectedTimeSpent": "2:00"
       }
     ]
   },
@@ -125,7 +133,8 @@
         "Theme": "culture",
         "Subtheme": "art",
         "Rating": 3.6,
-        "Promotion": false
+        "Promotion": false,
+        "ExpectedTimeSpent": "2:00"
       }
     ],
     "Events": [
@@ -135,7 +144,8 @@
         "StartTime": "2020-06-07T11:00Z",
         "FinishTime": "2020-05-02T01:00Z",
         "Theme": "sport",
-        "Subtheme": "football"
+        "Subtheme": "football",
+        "ExpectedTimeSpent": "2:00"
       }
     ]
   },
@@ -153,7 +163,8 @@
         "Theme": "history",
         "Subtheme": "ancient",
         "Rating": 4.8,
-        "Promotion": false
+        "Promotion": false,
+        "ExpectedTimeSpent": "2:00"
       }
     ],
     "Events": [
@@ -163,7 +174,8 @@
         "StartTime": "2020-06-03T01:00Z",
         "FinishTime": "2020-05-07T01:00Z",
         "Theme": "sport",
-        "Subtheme": "baseball"
+        "Subtheme": "baseball",
+        "ExpectedTimeSpent": "2:00"
       }
     ]
   }
