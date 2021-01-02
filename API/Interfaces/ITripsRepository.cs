@@ -10,7 +10,7 @@ namespace API.Interfaces
          Task<Trip> GetUserTrip(int tripId);
          Task<IEnumerable<TripDto>> GetUserTrips(int userId);
          Task<IEnumerable<AttractionDto>> GetAttractions(int tripId);
-         Task<IEnumerable<EventDto>> GetSCategoryEvents(string sCategory);
-         Task<IEnumerable<PlaceDto>> GetSCategoryPlaces (string sCategory);
+         Task<IEnumerable<EventDto>> GetSCategoryEvents(string sCategory, int cityId);
+         Task<IEnumerable<PlaceDto>> GetSCategoryPlaces (string sCategory, int cityId);
     }
 }

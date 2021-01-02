@@ -58,10 +58,10 @@ namespace API.Data
             }).ToListAsync();
         }
 
-        public async Task<IEnumerable<EventDto>> GetSCategoryEvents(string sCategory)
+        public async Task<IEnumerable<EventDto>> GetSCategoryEvents(string sCategory, int cityId)
         {
             var events = _context.Events.AsQueryable();
-            events = events.Where(c => c.Subtheme == sCategory);
+            events = events.Where(c => c.Subtheme == sCategory).Where(c => c.CityId == cityId);
             return await events.Select(events => new EventDto
             {
                 Id = events.Id,
@@ -75,10 +75,11 @@ namespace API.Data
             }).ToListAsync();
         }
 
-        public async Task<IEnumerable<PlaceDto>> GetSCategoryPlaces (string sCategory)
+        public async Task<IEnumerable<PlaceDto>> GetSCategoryPlaces (string sCategory, int cityId)
         {
             var places = _context.Places.AsQueryable();
             places = places.Where(c => c.Subtheme == sCategory);
+            places = places.Where(c => c.CityId == cityId);
             return await places.Select(places => new PlaceDto
             {
                 Id = places.Id,
@@ -93,5 +94,7 @@ namespace API.Data
                 ExpectedTimeSpent = places.ExpectedTimeSpent
             }).ToListAsync();
         }
+
+        
     }
 }
