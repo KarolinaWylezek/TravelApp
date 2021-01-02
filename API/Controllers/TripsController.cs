@@ -38,5 +38,22 @@ namespace API.Controllers
 
 
         }
+
+        [HttpGet("new-trip")]
+        public async Task<ActionResult<TripDto>> CreateTrip(CreateTripDto createTripDto)
+        {
+            
+            
+            
+            var trip = new Trip
+            {
+                Place = createTripDto.Place,
+                TripDate = createTripDto.TripDate,
+                TripFinishDate = createTripDto.TripFinishDate,
+                Attractions = _mapper.Map<ICollection<Attraction>>(await _tripsRepository.GetSCategoryEvents(createTripDto.Subcategory))
+            };
+
+            return _mapper.Map<TripDto>(trip);
+        }
     }
 }

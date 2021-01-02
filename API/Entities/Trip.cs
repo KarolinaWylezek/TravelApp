@@ -9,7 +9,7 @@ namespace API.Entities
     {
         public int Id { get; set; }
         public string Place { get; set; }
-        public DateTime TripDate { get; set; } = DateTime.Now;
+        public DateTime TripDate { get; set; }
         public DateTime TripFinishDate { get; set; }
         public ICollection<Attraction> Attractions { get; set; }
         public AppUser AppUser { get; set; }

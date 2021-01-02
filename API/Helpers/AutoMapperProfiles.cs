@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using API.DTOs;
 using API.Entities;
 using AutoMapper;
@@ -20,6 +21,11 @@ namespace API.Helpers
             CreateMap<Attraction, AttractionDto>();
             CreateMap<EventEditDto, Event>();
             CreateMap<PlaceEditDto, Place>();
+            // CreateMap<IList<EventDto>, IList<Attraction>>();
+            // CreateMap<IList<Attraction>, IList<EventDto>>();
+            CreateMap<Attraction, EventDto>();
+            CreateMap<EventDto, Attraction>();
+          
         }
     }
 }
