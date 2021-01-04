@@ -33,30 +33,21 @@ namespace API.Services
                 .Where(e => (e.StartTime >= createTripDto.TripDate && e.StartTime <= createTripDto.TripFinishDate)
                     || (e.FinishTime >= createTripDto.TripDate && e.StartTime <= createTripDto.TripFinishDate));
 
-            // var events = _mapper.Map<ICollection<AttractionDto>>((await _tripsRepository.GetSCategoryEvents(createTripDto.Subcategory, cityId))
-            //     .Where(e => (e.StartTime >= createTripDto.TripDate && e.StartTime <= createTripDto.TripFinishDate)
-            //         || (e.FinishTime >= createTripDto.TripDate && e.StartTime <= createTripDto.TripFinishDate)));
-            //  || (e.StartTime >= createTripDto.TripDate && e.FinishTime <= createTripDto.TripFinishDate)
-            // || (e.StartTime <= createTripDto.TripDate && e.FinishTime >= createTripDto.TripFinishDate));
 
-             var placesWithPromotions =(await _tripsRepository.GetSCategoryPlaces(createTripDto.Subcategory, cityId))
+             var placesWithPromotions = (await _tripsRepository.GetSCategoryPlaces(createTripDto.Subcategory, cityId))
              .Where(x => x.Promotion == true);
-
-
-
-            // var placesWithPromotions = _mapper.Map<ICollection<AttractionDto>>((await _tripsRepository.GetSCategoryPlaces(createTripDto.Subcategory, cityId))
-            //  .Where(x => x.Promotion == true));
 
              var otherPlaces = (await _tripsRepository.GetSCategoryPlaces(createTripDto.Subcategory, cityId))
              .Where(x => x.Promotion == false).OrderByDescending(x => x.Rating);
 
-             var places = placesWithPromotions.Concat(otherPlaces);
+             var categoryPlacesPromo = (await _tripsRepository.GetCategoryPlaces(createTripDto.Category, cityId))
+             .Where(x => x.Promotion == true);
 
-            // var otherPlaces = _mapper.Map<ICollection<AttractionDto>>((await _tripsRepository.GetSCategoryPlaces(createTripDto.Subcategory, cityId))
-            //  .Where(x => x.Promotion == false).OrderByDescending(x => x.Rating));
+             var categoryPlacesOthers = (await _tripsRepository.GetCategoryPlaces(createTripDto.Category, cityId))
+             .Where(x => x.Promotion == false).OrderByDescending(x => x.Rating);
 
+             var places = placesWithPromotions.Concat(otherPlaces).Concat(categoryPlacesPromo).Concat(categoryPlacesOthers);
 
-            //var attractions = events.Concat(placesWithPromotions).Concat(otherPlaces).ToList();
 
             ICollection<AttractionDto> attractions = new Collection<AttractionDto>();
 
@@ -66,10 +57,6 @@ namespace API.Services
 
             TimeSpan routeBreak = new TimeSpan(0, 30, 0);
             
-
-            // AttractionDto attr = _mapper.Map<AttractionDto>(placesWithPromotions.ElementAt<PlaceDto>(0));
-
-            // attractions.Add(attr);
 
             int tripDay = 0;
 
@@ -87,7 +74,8 @@ namespace API.Services
                 {
                     foreach (var item in events)
                     {
-                        if (item.StartTime <= DateTime.ParseExact(((createTripDto.TripDate.AddDays(tripDay)).ToString("dd.MM.yyyy") + " " + startTime.ToString("HH:mm")), "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture))
+                        if (item.StartTime <= DateTime.ParseExact(((createTripDto.TripDate.AddDays(tripDay)).ToString("dd.MM.yyyy") + " " + startTime.ToString("HH:mm")), "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture)
+                        && item.FinishTime <= DateTime.ParseExact(((createTripDto.TripDate.AddDays(tripDay)).ToString("dd.MM.yyyy") + " " + startTime.ToString("HH:mm")), "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture))
                         {
                             AttractionDto att = _mapper.Map<AttractionDto>(item);
                             if(attractions.Any(x => x.Name == att.Name))
@@ -102,7 +90,8 @@ namespace API.Services
                         
                         }
 
-                        else if( item.StartTime <= DateTime.ParseExact(((createTripDto.TripDate.AddDays(tripDay)).ToString("dd.MM.yyyy") + " " + (startTime.AddHours(3)).ToString("HH:mm")), "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture))
+                        else if( item.StartTime <= DateTime.ParseExact(((createTripDto.TripDate.AddDays(tripDay)).ToString("dd.MM.yyyy") + " " + (startTime.AddHours(3)).ToString("HH:mm")), "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture)
+                         && item.FinishTime <= DateTime.ParseExact(((createTripDto.TripDate.AddDays(tripDay)).ToString("dd.MM.yyyy") + " " + (startTime.AddHours(3)).ToString("HH:mm")), "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture))
                         {
                             AttractionDto att = _mapper.Map<AttractionDto>(item);
                             if(attractions.Any(x => x.Name == att.Name))

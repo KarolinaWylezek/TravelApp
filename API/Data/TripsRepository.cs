@@ -96,6 +96,43 @@ namespace API.Data
             }).ToListAsync();
         }
 
+         public async Task<IEnumerable<EventDto>> GetCategoryEvents(string Category, int cityId)
+        {
+            var events = _context.Events.AsQueryable();
+            events = events.Where(c => c.Theme == Category).Where(c => c.CityId == cityId);
+            return await events.Select(events => new EventDto
+            {
+                Id = events.Id,
+                Name = events.Name,
+                Address = events.Address,
+                StartTime = events.StartTime,
+                FinishTime = events.FinishTime,
+                Theme = events.Theme,
+                Subtheme = events.Subtheme,
+                ExpectedTimeSpent = events.ExpectedTimeSpent
+            }).ToListAsync();
+        }
+
+        public async Task<IEnumerable<PlaceDto>> GetCategoryPlaces (string Category, int cityId)
+        {
+            var places = _context.Places.AsQueryable();
+            places = places.Where(c => c.Theme == Category);
+            places = places.Where(c => c.CityId == cityId);
+            return await places.Select(places => new PlaceDto
+            {
+                Id = places.Id,
+                Name = places.Name,
+                Address = places.Address,
+                OpenTime = places.OpenTime,
+                CloseTime = places.CloseTime,
+                Theme = places.Theme,
+                Subtheme = places.Subtheme,
+                Rating = places.Rating,
+                Promotion = places.Promotion,
+                ExpectedTimeSpent = places.ExpectedTimeSpent
+            }).ToListAsync();
+        }
+
         
     }
 }
