@@ -133,6 +133,26 @@ namespace API.Data
             }).ToListAsync();
         }
 
+        public async Task<IEnumerable<PlaceDto>> GetOtherPlaces (string Category, int cityId)
+        {
+            var places = _context.Places.AsQueryable();
+            places = places.Where(c => c.Theme != Category);
+            places = places.Where(c => c.CityId == cityId);
+            return await places.Select(places => new PlaceDto
+            {
+                Id = places.Id,
+                Name = places.Name,
+                Address = places.Address,
+                OpenTime = places.OpenTime,
+                CloseTime = places.CloseTime,
+                Theme = places.Theme,
+                Subtheme = places.Subtheme,
+                Rating = places.Rating,
+                Promotion = places.Promotion,
+                ExpectedTimeSpent = places.ExpectedTimeSpent
+            }).ToListAsync();
+        }
+
         
     }
 }
