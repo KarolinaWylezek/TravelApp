@@ -33,7 +33,8 @@ namespace API.Data
                 Address = query.Address,
                 Type = query.Type,
                 Theme = query.Theme,
-                Subtheme = query.Subtheme
+                Subtheme = query.Subtheme,
+                DateTimeOfVisit = query.DateTimeOfVisit
                 
             }).ToListAsync();
         }

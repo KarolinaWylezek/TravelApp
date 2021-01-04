@@ -1,3 +1,5 @@
+using System;
+
 namespace API.DTOs
 {
     public class AttractionDto
@@ -8,6 +10,7 @@ namespace API.DTOs
         public string Type { get; set; }
         public string Theme { get; set; }
         public string Subtheme { get; set; }
+        public DateTime DateTimeOfVisit { get; set; }
        
     }
 }

@@ -17,6 +17,7 @@ namespace API.Extensions
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ICityRepository, CityRepository>();
             services.AddScoped<ITripsRepository, TripsRepository>();
+            services.AddScoped<ICreateTripService, CreateTripService>();
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
             services.AddDbContext<DataContext>(options =>
             {
