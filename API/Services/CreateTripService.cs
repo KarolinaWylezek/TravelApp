@@ -29,27 +29,52 @@ namespace API.Services
 
             var cityId = city.Id;
 
-             var events =(await _tripsRepository.GetSCategoryEvents(createTripDto.Subcategory, cityId))
-                .Where(e => (e.StartTime >= createTripDto.TripDate && e.StartTime <= createTripDto.TripFinishDate)
-                    || (e.FinishTime >= createTripDto.TripDate && e.StartTime <= createTripDto.TripFinishDate));
+             IEnumerable<EventDto> events = new Collection<EventDto>();
+             IEnumerable<PlaceDto> subcategoryPlacesPromo = new Collection<PlaceDto>();
+             IEnumerable<PlaceDto> subcategoryPlacesOthers = new Collection<PlaceDto>();
+
+             int x =  createTripDto.Subcategory.Count;
+
+             DateTime sightseeingFinish = DateTime.ParseExact(createTripDto.FinishOfSightseeing, "HH:mm", CultureInfo.InvariantCulture);
+
+             DateTime finishOfTrip = DateTime.ParseExact((createTripDto.TripFinishDate.ToString("dd.MM.yyyy") + " " + sightseeingFinish.ToString("HH:mm")), "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture);
+
+             
+
+            for (int i = 0; i < createTripDto.Subcategory.Count; i++)
+            {
+                events = events.Concat((await _tripsRepository.GetSCategoryEvents(createTripDto.Subcategory[i], cityId))
+                .Where(e => (e.StartTime >= createTripDto.TripDate && e.StartTime <= finishOfTrip)
+                    || (e.FinishTime >= createTripDto.TripDate && e.StartTime <= finishOfTrip)));
 
 
-             var subcategoryPlacesPromo = (await _tripsRepository.GetSCategoryPlaces(createTripDto.Subcategory, cityId))
+                subcategoryPlacesPromo = subcategoryPlacesPromo.Concat((await _tripsRepository.GetSCategoryPlaces(createTripDto.Subcategory[i], cityId))
+                    .Where(x => x.Promotion == true));
+
+                subcategoryPlacesOthers = subcategoryPlacesOthers.Concat((await _tripsRepository.GetSCategoryPlaces(createTripDto.Subcategory[i], cityId))
+                    .Where(x => x.Promotion == false).OrderByDescending(x => x.Rating));
+            }
+
+            IEnumerable<PlaceDto> categoryPlacesPromo = new Collection<PlaceDto>();
+            IEnumerable<PlaceDto> categoryPlacesOthers = new Collection<PlaceDto>();
+
+            for (int i = 0; i < createTripDto.Category.Count; i++)
+            {
+                categoryPlacesPromo = categoryPlacesPromo.Concat((await _tripsRepository.GetCategoryPlaces(createTripDto.Category[i], cityId))
+                    .Where(x => x.Promotion == true));
+
+                categoryPlacesOthers = categoryPlacesOthers.Concat((await _tripsRepository.GetCategoryPlaces(createTripDto.Category[i], cityId))
+                    .Where(x => x.Promotion == false).OrderByDescending(x => x.Rating));
+            }
+
+             
+
+             
+
+             var otherPlacesPromo = (await _tripsRepository.GetOtherPlaces(cityId))
              .Where(x => x.Promotion == true);
 
-             var subcategoryPlacesOthers = (await _tripsRepository.GetSCategoryPlaces(createTripDto.Subcategory, cityId))
-             .Where(x => x.Promotion == false).OrderByDescending(x => x.Rating);
-
-             var categoryPlacesPromo = (await _tripsRepository.GetCategoryPlaces(createTripDto.Category, cityId))
-             .Where(x => x.Promotion == true);
-
-             var categoryPlacesOthers = (await _tripsRepository.GetCategoryPlaces(createTripDto.Category, cityId))
-             .Where(x => x.Promotion == false).OrderByDescending(x => x.Rating);
-
-             var otherPlacesPromo = (await _tripsRepository.GetOtherPlaces(createTripDto.Category, cityId))
-             .Where(x => x.Promotion == true);
-
-             var otherPlaces = (await _tripsRepository.GetOtherPlaces(createTripDto.Category, cityId))
+             var otherPlaces = (await _tripsRepository.GetOtherPlaces(cityId))
              .Where(x => x.Promotion == false).OrderByDescending(x => x.Rating);
 
              var places = subcategoryPlacesPromo.Concat(subcategoryPlacesOthers).Concat(categoryPlacesPromo).Concat(categoryPlacesOthers).Concat(otherPlacesPromo).Concat(otherPlaces);

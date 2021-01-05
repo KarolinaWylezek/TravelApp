@@ -133,10 +133,9 @@ namespace API.Data
             }).ToListAsync();
         }
 
-        public async Task<IEnumerable<PlaceDto>> GetOtherPlaces (string Category, int cityId)
+        public async Task<IEnumerable<PlaceDto>> GetOtherPlaces (int cityId)
         {
             var places = _context.Places.AsQueryable();
-            places = places.Where(c => c.Theme != Category);
             places = places.Where(c => c.CityId == cityId);
             return await places.Select(places => new PlaceDto
             {
