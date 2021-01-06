@@ -22,6 +22,7 @@ namespace API.Helpers
             CreateMap<AttractionDto, Attraction>();
             CreateMap<EventEditDto, Event>();
             CreateMap<PlaceEditDto, Place>();
+            CreateMap<Category, CategoryDto>();
             // CreateMap<IList<EventDto>, IList<Attraction>>();
             // CreateMap<IList<Attraction>, IList<EventDto>>();
             //CreateMap<AttractionDto, EventDto>();

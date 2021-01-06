@@ -3,3 +3,66 @@
         <h1>Create your sightseeing plan!</h1>
     </div>
 </div>
+
+<div>
+    <form [formGroup]='tripForm' (ngSubmit)="tripForm.valid && submitForm()" autocomplete="off">
+        <hr>
+        <div class="form-group">
+            <input [class.is-invalid]='tripForm.get("place").errors && tripForm.get("place").touched' 
+            type="text" class="form-control" formControlName='place' placeholder="Place">
+
+            <div class="invalid-feedback">Name is obligatory</div>
+        </div>
+
+        <div class="form-group">
+            <input [class.is-invalid]='tripForm.get("tripDate").errors && tripForm.get("tripDate").touched' 
+            type="date" class="form-control" formControlName='tripDate' placeholder="Start of you trip">
+
+            <div class="invalid-feedback">Start date of trip is obligatory</div>
+        </div>
+
+        <div class="form-group">
+            <input [class.is-invalid]='tripForm.get("tripFinishDate").errors && tripForm.get("tripFinishDate").touched' 
+            type="date" class="form-control" formControlName='tripFinishDate' placeholder="End of your trip">
+
+            <div class="invalid-feedback">End date of trip time is obligatory</div>
+        </div>
+
+        <div class="form-group">
+            <input [class.is-invalid]='tripForm.get("startOfSightseeing").errors && tripForm.get("startOfSightseeing").touched' 
+            type="time" class="form-control" formControlName='startOfSightseeing' placeholder="Start of sightseeing">
+
+            <div class="invalid-feedback">Starting time of daily sightseeing is obligatory</div>
+        </div>
+
+        <div class="form-group">
+            <input [class.is-invalid]='tripForm.get("finishOfSightseeing").errors && tripForm.get("finishOfSightseeing").touched' 
+            type="time" class="form-control" formControlName='finishOfSightseeing' placeholder="Finish of sightseeing">
+
+            <div class="invalid-feedback">Finish time of daily sightseeing is obligatory</div>
+        </div>
+
+        <div *ngFor="let data of cats; let i=index">
+            <label>
+              <input type="checkbox" [value]="data.name" (change)="onCheckboxChange($event)" />
+              {{data.name}}
+            </label>
+          </div>
+
+          <!-- <button class="btn btn-primary mr-2" (click)="loadSubcategories()">Subcategories</button> -->
+          <h4>Choose subcategories: </h4>
+
+          <div *ngFor="let data of subcats; let i=index">
+              
+            <label>
+              <input type="checkbox" [value]="data.name" (change)="onCheckboxChangeSub($event)" />
+              {{data.name}}
+            </label>
+          </div>
+        
+          <button [disabled]='!tripForm.valid' class="btn btn-primary mr-2" type="submit">Submit</button>
+       
+    </form>
+
+    
+</div>
