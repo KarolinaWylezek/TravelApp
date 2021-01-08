@@ -19,4 +19,8 @@ export class TripService {
   getSubcategories(catId: number) {
     return this.http.get<Subcategory[]>(this.baseUrl + 'categories/' + catId);
   }
+
+  createTrip(model: any) {
+    return this.http.post(this.baseUrl + 'trips/' + 'new-trip', model);
+  }
 }

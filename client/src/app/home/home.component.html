@@ -5,7 +5,7 @@
 </div>
 
 <div>
-    <form [formGroup]='tripForm' (ngSubmit)="tripForm.valid && submitForm()" autocomplete="off">
+    <form [formGroup]='tripForm' (ngSubmit)="tripForm.valid && createTrip()" autocomplete="off">
         <hr>
         <div class="form-group">
             <input [class.is-invalid]='tripForm.get("place").errors && tripForm.get("place").touched' 

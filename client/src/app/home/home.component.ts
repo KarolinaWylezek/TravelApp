@@ -34,8 +34,8 @@ export class HomeComponent implements OnInit {
       tripFinishDate: new FormControl('', Validators.required),
       startOfSightseeing: new FormControl('', Validators.required),
       finishOfSightseeing: new FormControl('', Validators.required),
-      checkArray: this.formBuilder.array([]),
-      checkArraySubcat: this.formBuilder.array([])
+      category: this.formBuilder.array([]),
+      subcategory: this.formBuilder.array([])
     })
   }
 
@@ -68,21 +68,21 @@ export class HomeComponent implements OnInit {
   // loadSubcategories(id: number) {
     
   //     this.tripService.getSubcategories(id).subscribe(response =>{
-  //       this.subcats = this.subcats.concat(response);
+  //       this.subcats = response;
   //   });
     
   // }
 
   onCheckboxChange(e) {
-    const checkArray: FormArray = this.tripForm.get('checkArray') as FormArray;
-  
+    const category: FormArray = this.tripForm.get('category') as FormArray;
     if (e.target.checked) {
-      checkArray.push(new FormControl(e.target.value));
+      category.push(new FormControl(e.target.value));
+
     } else {
       let i: number = 0;
-      checkArray.controls.forEach((item: FormControl) => {
+      category.controls.forEach((item: FormControl) => {
         if (item.value == e.target.value) {
-          checkArray.removeAt(i);
+          category.removeAt(i);
           return;
         }
         i++;
@@ -91,33 +91,34 @@ export class HomeComponent implements OnInit {
   }
 
   onCheckboxChangeSub(e) {
-    const checkArraySubcat: FormArray = this.tripForm.get('checkArraySubcat') as FormArray;
+    const subcategory: FormArray = this.tripForm.get('subcategory') as FormArray;
   
     if (e.target.checked) {
-      checkArraySubcat.push(new FormControl(e.target.value));
+      subcategory.push(new FormControl(e.target.value));
     } else {
       let i: number = 0;
-      checkArraySubcat.controls.forEach((item: FormControl) => {
+      subcategory.controls.forEach((item: FormControl) => {
         if (item.value == e.target.value) {
-          checkArraySubcat.removeAt(i);
+          subcategory.removeAt(i);
           return;
         }
         i++;
       });
     }
   }
+  
 
   createTrip() {
-      console.log(this.tripForm);
+      this.tripService.createTrip(this.tripForm.value).subscribe(response => {
+        console.log(response);
+      }, error => {
+        console.log(error);
+        this.toastr.error(error.error);
+      })
    
     }
 
     submitForm() {
       console.log(this.tripForm.value);
-      // this.checkArray.controls.forEach((item: FormControl) => {
-
-      // }
     }
   }
-
-  

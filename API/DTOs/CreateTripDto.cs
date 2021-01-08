@@ -15,5 +15,6 @@ namespace API.DTOs
         //public string Subcategory { get; set; }
         public string StartOfSightseeing { get; set; }
         public string FinishOfSightseeing { get; set; }
+
     }
 }

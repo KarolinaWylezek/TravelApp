@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using API.Data;
 using API.DTOs;
 using API.Entities;
 using API.Extensions;
@@ -18,9 +19,11 @@ namespace API.Controllers
         private readonly IMapper _mapper;
         private readonly ICityRepository _cityRepository;
         private readonly ICreateTripService _createTripService;
-        public TripsController(IUserRepository userRepository, ITripsRepository tripsRepository, IMapper mapper, ICityRepository cityRepository,
-             ICreateTripService createTripService)
+        private readonly DataContext _context;
+        public TripsController(IUserRepository userRepository, ITripsRepository tripsRepository, IMapper mapper, ICityRepository cityRepository, 
+            ICreateTripService createTripService, DataContext context)
         {
+            _context = context;
             _createTripService = createTripService;
             _cityRepository = cityRepository;
             _mapper = mapper;
@@ -46,17 +49,25 @@ namespace API.Controllers
         }
 
         [HttpPost("new-trip")]
-        public async Task<ActionResult<TripDto>> CreateTrip(CreateTripDto createTripDto)
+        public async Task<ActionResult<UserTripDto>> CreateTrip(CreateTripDto createTripDto)
         { 
+           
             var trip = new Trip
             {
+                AppUserId = User.GetUserId(),
                 Place = createTripDto.Place,
                 TripDate = createTripDto.TripDate,
                 TripFinishDate = createTripDto.TripFinishDate,
                 Attractions = _mapper.Map<ICollection<Attraction>>(await _createTripService.ChooseAttractions(createTripDto))
+                
             };
 
-            return _mapper.Map<TripDto>(trip);
+           
+
+             _context.Trips.Add(trip);
+             await _context.SaveChangesAsync();
+
+            return _mapper.Map<UserTripDto>(trip);
         }
 
 

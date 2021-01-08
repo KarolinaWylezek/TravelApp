@@ -11,5 +11,6 @@ namespace API.DTOs
         public DateTime TripDate { get; set; }
         public DateTime TripFinishDate { get; set; }
         public ICollection<Attraction> Attractions { get; set; }
+
     }
 }

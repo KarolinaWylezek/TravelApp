@@ -33,7 +33,7 @@ namespace API.Services
              IEnumerable<PlaceDto> subcategoryPlacesPromo = new Collection<PlaceDto>();
              IEnumerable<PlaceDto> subcategoryPlacesOthers = new Collection<PlaceDto>();
 
-             int x =  createTripDto.Subcategory.Count;
+            // int x =  createTripDto.Subcategory.Count;
 
              DateTime sightseeingFinish = DateTime.ParseExact(createTripDto.FinishOfSightseeing, "HH:mm", CultureInfo.InvariantCulture);
 
