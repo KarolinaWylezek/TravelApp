@@ -23,4 +23,8 @@ export class TripService {
   createTrip(model: any) {
     return this.http.post(this.baseUrl + 'trips/' + 'new-trip', model);
   }
+
+  getMaxTripId(userId: number) {
+    return this.http.get<number>(this.baseUrl + 'trips/' + userId + '/id');
+  }
 }

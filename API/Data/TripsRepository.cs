@@ -59,6 +59,19 @@ namespace API.Data
             }).ToListAsync();
         }
 
+        public async Task<IEnumerable<int>> GetTripsId(int userId)
+        {
+            var query = _context.Trips.AsQueryable();
+
+            var ids = query.Where(t => t.AppUserId == userId).Select(x => x.Id).ToListAsync();
+
+            //int id = ids.
+
+            return await ids;
+        }
+
+        
+
         public async Task<IEnumerable<EventDto>> GetSCategoryEvents(string sCategory, int cityId)
         {
             var events = _context.Events.AsQueryable();

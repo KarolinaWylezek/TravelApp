@@ -1,11 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { take } from 'rxjs/operators';
 import { Category } from '../_models/category';
 import { City } from '../_models/city';
 import { CityParams } from '../_models/cityParams';
 import { Subcategory } from '../_models/subcategory';
+import { User } from '../_models/user';
+import { AccountService } from '../_services/account.service';
 import { CitiesService } from '../_services/cities.service';
 import { TripService } from '../_services/trip.service';
 
@@ -20,10 +24,13 @@ export class HomeComponent implements OnInit {
   subcats: Subcategory[] = [];
   cityParams: CityParams;
   cities: City[];
+  
   //chosenCats: Category[];
 
-  constructor(private toastr: ToastrService, private formBuilder: FormBuilder, private tripService: TripService, private citiesService: CitiesService) {
+  constructor(private toastr: ToastrService, private formBuilder: FormBuilder, private tripService: TripService, private citiesService: CitiesService,
+     private router: Router, private accountService: AccountService) {
     this.cityParams = this.citiesService.getCityParams();
+    
    }
   
 
@@ -133,10 +140,11 @@ export class HomeComponent implements OnInit {
     })
   }
   
-
+ 
   createTrip() {
       this.tripService.createTrip(this.tripForm.value).subscribe(response => {
         console.log(response);
+        this.router.navigateByUrl('/trip-created');
       }, error => {
         console.log(error);
         this.toastr.error(error.error);

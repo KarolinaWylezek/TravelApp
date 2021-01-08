@@ -5,4 +5,6 @@ export interface Attraction {
    type: string;
    theme: string;
    subtheme: string;
+   dateTimeOfVisit: Date;
   }
+

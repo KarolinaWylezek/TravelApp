@@ -13,9 +13,11 @@ import { CityDetailsComponent } from './cities/city-details/city-details.compone
 import { EditEmailComponent } from './edit-email/edit-email.component';
 import { EditUsernameComponent } from './edit-username/edit-username.component';
 import { HomeComponent } from './home/home.component';
+import { PausePageComponent } from './pause-page/pause-page.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
 import { TripDetailsComponent } from './trip-details/trip-details.component';
+import { TripComponent } from './trip/trip.component';
 import { TripsComponent } from './trips/trips.component';
 import { AdminGuard } from './_guards/admin.guard';
 import { AuthGuard } from './_guards/auth.guard';
@@ -31,6 +33,8 @@ const routes: Routes = [
     children: [
       {path: 'trips/:id', component: TripDetailsComponent},
       {path: 'trips', component: TripsComponent},
+      {path: 'trip', component: TripComponent},
+      {path: 'trip-created', component: PausePageComponent},
       {path: 'profile', component: ProfileComponent},
       {path: 'profile/editusername', component: EditUsernameComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'profile/editemail', component: EditEmailComponent, canDeactivate: [PreventUnsavedChangesGuard]},

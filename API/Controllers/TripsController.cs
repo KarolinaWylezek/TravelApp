@@ -71,5 +71,20 @@ namespace API.Controllers
         }
 
 
+        [HttpGet("{userId}/id")]
+        public async Task<ActionResult<int>> GetTripId(int userId)
+        {
+            var ids = await _tripsRepository.GetTripsId(userId);
+            int maxId = 0;
+            
+            foreach (var item in ids)
+            {
+                if(item > maxId)
+                    maxId = item;
+            }
+
+            return Ok(maxId);
+        }
+
     }
 }

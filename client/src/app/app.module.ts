@@ -35,6 +35,8 @@ import { EventFormComponent } from './admin/event-form/event-form.component';
 import { PlaceFormComponent } from './admin/place-form/place-form.component';
 import { EditPlaceComponent } from './admin/edit-place/edit-place.component';
 import { EditEventComponent } from './admin/edit-event/edit-event.component';
+import { TripComponent } from './trip/trip.component';
+import { PausePageComponent } from './pause-page/pause-page.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,9 @@ import { EditEventComponent } from './admin/edit-event/edit-event.component';
     EventFormComponent,
     PlaceFormComponent,
     EditPlaceComponent,
-    EditEventComponent
+    EditEventComponent,
+    TripComponent,
+    PausePageComponent
   ],
   imports: [
     BrowserModule,
