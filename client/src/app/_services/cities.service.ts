@@ -55,6 +55,10 @@ export class CitiesService {
     }))
   }
 
+  getCitiesToChoose() {
+    return this.http.get<City[]>(this.baseUrl + 'cities/choose');
+  }
+
   getCity(name: string)  {
     const city = [...this.cityCache.values()].reduce((arr, elem) => arr.concat(elem.result), []).find((city: City) => city.name === name);
 

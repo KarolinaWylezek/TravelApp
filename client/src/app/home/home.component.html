@@ -8,10 +8,13 @@
     <form [formGroup]='tripForm' (ngSubmit)="tripForm.valid && createTrip()" autocomplete="off">
         <hr>
         <div class="form-group">
-            <input [class.is-invalid]='tripForm.get("place").errors && tripForm.get("place").touched' 
-            type="text" class="form-control" formControlName='place' placeholder="Place">
+            <select [class.is-invalid]='tripForm.get("place").errors && tripForm.get("place").touched' 
+            (change)="changeCity($event)" type="select" class="form-control" formControlName='place' placeholder="Place">
+            <option value="">Choose city</option>
+            <option *ngFor="let city of cities" [value]="city.name">{{city.name | titlecase}}</option>
+            </select>
 
-            <div class="invalid-feedback">Name is obligatory</div>
+            <div class="invalid-feedback">Place is obligatory</div>
         </div>
 
         <div class="form-group">

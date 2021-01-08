@@ -3,7 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Category } from '../_models/category';
+import { City } from '../_models/city';
+import { CityParams } from '../_models/cityParams';
 import { Subcategory } from '../_models/subcategory';
+import { CitiesService } from '../_services/cities.service';
 import { TripService } from '../_services/trip.service';
 
 @Component({
@@ -15,21 +18,26 @@ export class HomeComponent implements OnInit {
   tripForm: FormGroup;
   cats: Category[];
   subcats: Subcategory[] = [];
+  cityParams: CityParams;
+  cities: City[];
   //chosenCats: Category[];
 
-  constructor(private toastr: ToastrService, private formBuilder: FormBuilder, private tripService: TripService) {
+  constructor(private toastr: ToastrService, private formBuilder: FormBuilder, private tripService: TripService, private citiesService: CitiesService) {
+    this.cityParams = this.citiesService.getCityParams();
    }
   
 
   ngOnInit(): void {
+    this.loadCities();
     this.initializeForm();
     this.loadCategories();
+    
 
   }
 
   initializeForm() {
     this.tripForm = this.formBuilder.group({
-      place: new FormControl('', Validators.required),
+      place: ['', Validators.required],
       tripDate: new FormControl('', Validators.required),
       tripFinishDate: new FormControl('', Validators.required),
       startOfSightseeing: new FormControl('', Validators.required),
@@ -105,6 +113,24 @@ export class HomeComponent implements OnInit {
         i++;
       });
     }
+  }
+
+  changeCity(e) {
+    console.log(e.value)
+    this.cityName.setValue(e.target.value, {
+      onlySelf: true
+    })
+  }
+
+  // Getter method to access formcontrols
+  get cityName() {
+    return this.tripForm.get('place');
+  }
+
+  loadCities() {
+    this.citiesService.getCitiesToChoose().subscribe(response =>{
+      this.cities = response;
+    })
   }
   
 

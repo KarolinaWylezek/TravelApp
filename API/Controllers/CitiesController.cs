@@ -40,6 +40,15 @@ namespace API.Controllers
 
         }
 
+        [HttpGet("choose")]
+        public async Task<ActionResult<IEnumerable<CityDto>>> GetCitiesToChoose()
+        {
+            var cities = await _cityRepository.GetCitiesAsync();
+
+            return Ok(_mapper.Map<IEnumerable<CityDto>>(cities));
+
+        }
+
         [HttpGet("{name}")]
         public async Task<ActionResult<CityDto>> GetCity(string name)
         {

@@ -55,7 +55,7 @@ namespace API.Controllers
             var trip = new Trip
             {
                 AppUserId = User.GetUserId(),
-                Place = createTripDto.Place,
+                Place = createTripDto.Place.ToLower(),
                 TripDate = createTripDto.TripDate,
                 TripFinishDate = createTripDto.TripFinishDate,
                 Attractions = _mapper.Map<ICollection<Attraction>>(await _createTripService.ChooseAttractions(createTripDto))

@@ -25,7 +25,7 @@ namespace API.Services
 
         public async Task<ICollection<AttractionDto>> ChooseAttractions(CreateTripDto createTripDto)
         {
-            var city = await _cityRepository.GetCityByNameAsync(createTripDto.Place);
+            var city = await _cityRepository.GetCityByNameAsync(createTripDto.Place.ToLower());
 
             var cityId = city.Id;
 
