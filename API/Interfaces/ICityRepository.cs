@@ -26,5 +26,6 @@ namespace API.Interfaces
          Task<Place> GetPlaceByIdAsync(int id);
          void UpdatePlace(Place place);
          void UpdateEvent(Event uEvent);
+         Task<PagedList<PlaceDto>> GetPlacesWithPagination(int cityId, PlacesParams placesParams);
     }
 }

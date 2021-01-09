@@ -9,5 +9,6 @@ namespace API.Interfaces
     {
          Task<IEnumerable<CategoryDto>> GetCategories();
          Task<IEnumerable<SubcategoryDto>> GetSubategories(int categoryId);
+         Task<IEnumerable<string>> GetAllSubategories();
     }
 }

@@ -37,6 +37,8 @@ import { EditPlaceComponent } from './admin/edit-place/edit-place.component';
 import { EditEventComponent } from './admin/edit-event/edit-event.component';
 import { TripComponent } from './trip/trip.component';
 import { PausePageComponent } from './pause-page/pause-page.component';
+import { RatePlaceComponent } from './rate-place/rate-place.component';
+import { PlaceCardComponent } from './place-card/place-card.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +71,9 @@ import { PausePageComponent } from './pause-page/pause-page.component';
     EditPlaceComponent,
     EditEventComponent,
     TripComponent,
-    PausePageComponent
+    PausePageComponent,
+    RatePlaceComponent,
+    PlaceCardComponent
   ],
   imports: [
     BrowserModule,

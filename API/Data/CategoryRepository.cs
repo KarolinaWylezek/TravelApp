@@ -46,6 +46,22 @@ namespace API.Data
                 
             }).ToListAsync();
         }
+
+        public async Task<IEnumerable<string>> GetAllSubategories()
+        {
+            var query = _context.Subcategories.AsQueryable();
+
+            var subcats = await query.Select(query => new SubcategoryDto
+            {
+                Id = query.Id,
+                Name = query.Name,
+                
+            }).ToListAsync();
+
+            var names = subcats.Select(x => x.Name);
+
+            return names;
+        }
     }
 
 }

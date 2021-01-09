@@ -103,6 +103,37 @@ namespace API.Data
             }).ToListAsync();
         }
 
+         public async Task<PagedList<PlaceDto>> GetPlacesWithPagination(int cityId, PlacesParams placesParams)
+        {
+            var query = _context.Places.AsQueryable();
+
+            query = query.Where(a => a.CityId == cityId);
+
+
+            var places = query.Select(query => new PlaceDto
+            {
+                Id = query.Id,
+                Name = query.Name,
+                Address = query.Address,
+                OpenTime = query.OpenTime,
+                CloseTime = query.CloseTime,
+                Theme = query.Theme,
+                Subtheme = query.Subtheme,
+                Promotion = query.Promotion,
+                ExpectedTimeSpent = query.ExpectedTimeSpent
+                
+            }).AsNoTracking();
+
+            if(placesParams.SelectedCategory == "All")
+            {
+                return await PagedList<PlaceDto>.CreateAsync(places, placesParams.PageNumber, placesParams.PageSize);
+            }
+
+            places = places.Where(s => s.Subtheme == placesParams.SelectedCategory);
+
+            return await PagedList<PlaceDto>.CreateAsync(places, placesParams.PageNumber, placesParams.PageSize);
+        }
+
         public async Task<Place> GetPlaceByIdAsync(int id)
         {
             return await _context.Places.FindAsync(id);

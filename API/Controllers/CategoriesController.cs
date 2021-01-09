@@ -33,5 +33,14 @@ namespace API.Controllers
             return Ok(subcategories);
 
         }
+
+        [HttpGet("subcategories")]
+        public async Task<ActionResult<IEnumerable<string>>> GetAllSubcategories()
+        {
+             var categories = await _categoryRepository.GetAllSubategories();
+            return Ok(categories);
+
+        }
+
     }
 }

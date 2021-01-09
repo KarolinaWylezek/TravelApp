@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using API.Extensions;
+using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
@@ -28,6 +30,15 @@ namespace API.Controllers
         public async Task<ActionResult<IEnumerable<PlaceDto>>> GetPlace(int id)
         {
             var places = await _cityRepository.GetPlaces(id);
+            return Ok(places);
+        }
+
+        [HttpGet("paged/{id}")]
+        public async Task<ActionResult<IEnumerable<PlaceDto>>> GetPlacesWithPagination(int id, [FromQuery]PlacesParams placesParams)
+        {
+            var places = await _cityRepository.GetPlacesWithPagination(id, placesParams);
+            Response.AddPaginationHeader(places.CurrentPage, places.PageSize, places.TotalCount, places.TotalPages);
+
             return Ok(places);
         }
 

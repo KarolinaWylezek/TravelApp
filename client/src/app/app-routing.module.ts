@@ -15,6 +15,7 @@ import { EditUsernameComponent } from './edit-username/edit-username.component';
 import { HomeComponent } from './home/home.component';
 import { PausePageComponent } from './pause-page/pause-page.component';
 import { ProfileComponent } from './profile/profile.component';
+import { RatePlaceComponent } from './rate-place/rate-place.component';
 import { RegisterComponent } from './register/register.component';
 import { TripDetailsComponent } from './trip-details/trip-details.component';
 import { TripComponent } from './trip/trip.component';
@@ -36,6 +37,7 @@ const routes: Routes = [
       {path: 'trip', component: TripComponent},
       {path: 'trip-created', component: PausePageComponent},
       {path: 'profile', component: ProfileComponent},
+      {path: 'rate/:name', component: RatePlaceComponent},
       {path: 'profile/editusername', component: EditUsernameComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'profile/editemail', component: EditEmailComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'roles', component: AdminPanelComponent, canActivate: [AdminGuard]},
