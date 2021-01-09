@@ -101,5 +101,17 @@ namespace API.Controllers
 
            return BadRequest("Failed to update");
         }
+
+        [HttpPost("rate/{placeId}")]
+        public async Task<ActionResult> RatePlace(int placeId, gradeDto grade)
+        {
+            var place = await _cityRepository.GetPlaceByIdAsync(placeId);
+
+           _cityRepository.RatePlace(placeId, grade.Grade);
+
+           if (await _cityRepository.SaveAllAsync()) return NoContent();
+
+           return BadRequest("Failed to rate");
+        }
     }
 }

@@ -164,6 +164,13 @@ namespace API.Data
             return await _context.Events.FindAsync(id);
         }
 
+        public void RatePlace(int placeid, int grade)
+        {
+            var place =  _context.Places.FirstOrDefault(x => x.Id == placeid);
+            place.NumberOfGrades +=1;
+            place.Rating = (place.Rating * (place.NumberOfGrades - 1) + grade)/place.NumberOfGrades;
+        }
+
         
      public void DeletePlace(int placeid)
         {

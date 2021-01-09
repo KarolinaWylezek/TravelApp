@@ -27,5 +27,6 @@ namespace API.Interfaces
          void UpdatePlace(Place place);
          void UpdateEvent(Event uEvent);
          Task<PagedList<PlaceDto>> GetPlacesWithPagination(int cityId, PlacesParams placesParams);
+         void RatePlace(int placeid, int grade);
     }
 }
