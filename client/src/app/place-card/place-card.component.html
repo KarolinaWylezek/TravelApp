@@ -1,19 +1,28 @@
 <div class="card mb-1 d-flex">
-    <div class="card-body p-1 form-group d-flex mb-0">
-        <h6 class="align-text-bottom card-title mb-2 mt-2 ml-4 mr-auto" style="color:black;">
+    <div class="card-body p-1 form-group d-flex mb-0 ">
+        <h6 class="align-text-center card-title mb-2 mt-2 ml-4 mr-auto" style="color:black;">
             {{place.name | titlecase}}
         </h6>
-        <ul class="list-inline city-icons animate text-right form-group mb-0">
-            <li class="list-inline-item">
-                <button  class="btn btn-primary">
-                    <i class="fa fa-info"></i>
-                </button>
+        <ul class="list-inline city-icons animate text-center align-items-center form-group mb-0 ">
+            <li class="list-inline-item align-middle">
+                <form [formGroup]='placeForm'>
+                    <div class="form-group mb-0">
+                        <li class="list-inline-item"><rating class="form-control" style="color: orange;" formControlName='rating'></rating></li>
+                        <li class="list-inline-item align-top"><button class="btn btn btn-info mr-2"  (click)="submitForm()">Save</button></li>
+                        
+                      </div>
+                      
+                </form>
+           
+                  
+                  <!-- <hr>
+                  <pre>Model: <b>{{ placeForm.value }}</b></pre>
+                  <button class="btn btn-sm btn-outline-{{ placeForm.disabled ? 'danger' : 'success'}} mr-2" (click)="toggle()">
+                    {{ placeForm.disabled ? "control disabled" : " control enabled" }}
+                  </button>
+                  <button class="btn btn-sm btn-outline-primary mr-2" (click)="placeForm.setValue(null)">Clear</button> -->
             </li>
-            <li class="list-inline-item">
-                <button class="btn btn-success">
-                    Visit!
-                </button>
-            </li>
+           
         </ul>
     </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Place } from '../_models/place';
 
 @Component({
@@ -8,10 +9,22 @@ import { Place } from '../_models/place';
 })
 export class PlaceCardComponent implements OnInit {
   @Input() place: Place;
+  placeForm: FormGroup;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.initializeForm();
+  }
+
+  initializeForm() {
+    this.placeForm = this.formBuilder.group({
+      rating: new FormControl(null)
+    })
+  }
+
+  submitForm() {
+    console.log(this.placeForm.value);
   }
 
 }

@@ -4,7 +4,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ModalModule } from 'ngx-bootstrap/modal';
-
+import { RatingModule } from 'ngx-bootstrap/rating';
+//import {RatingModule} from "ngx-rating";
 
 
 @NgModule({
@@ -16,13 +17,15 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     }),
     PaginationModule.forRoot(),
     TabsModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    RatingModule.forRoot()
   ],
   exports: [
     ToastrModule,
     PaginationModule,
     TabsModule,
-    ModalModule
+    ModalModule,
+    RatingModule
   ]
 })
 export class SharedModule { }

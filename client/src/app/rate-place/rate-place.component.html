@@ -3,7 +3,7 @@
 <div class="container mt-3">
     <form #form="ngForm" class="form-inline mb-3" (ngSubmit)="loadPlaces()" autocomplete="off">
         <div class="form-group">
-            <label>Show: </label>
+            <label>Show places from category: </label>
             <select name="cat" style="width: 100px" [(ngModel)]="placesParams.selectedCategory" (ngSubmit)="loadSubcategories()" class="form-control ml-1">
                 <option *ngFor='let cat of subcategories' [value]="cat">
                     {{cat}}
