@@ -73,6 +73,11 @@ export class CitiesService {
     return this.http.get<string[]>(this.baseUrl + 'countries');
   }
 
+  ratePlace(placeId: number, model: any) {
+    return this.http.post(this.baseUrl + 'places/rate/' + placeId, model);
+  }
+
+
   private getPaginatedResult<T>(url, params) {
     const paginatedResult: PaginatedResult<T> = new PaginatedResult<T>();
     return this.http.get<T>(url, { observe: 'response', params }).pipe(

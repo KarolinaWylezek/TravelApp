@@ -1,4 +1,4 @@
-<div >
+<div *ngIf="trip">
     <h3 style="color: rgb(70, 66, 66);"><strong>Place: </strong>{{trip.place | titlecase}}
     <button class="btn btn-success " routerLink='/rate/{{trip.place}}' style="margin-left: 40%;">
         Rate places in {{trip.place | titlecase}}

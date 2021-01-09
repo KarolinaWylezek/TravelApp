@@ -5,10 +5,10 @@
         </h6>
         <ul class="list-inline city-icons animate text-center align-items-center form-group mb-0 ">
             <li class="list-inline-item align-middle">
-                <form [formGroup]='placeForm'>
+                <form [formGroup]='placeForm' (ngSubmit)="ratePlace()">
                     <div class="form-group mb-0">
-                        <li class="list-inline-item"><rating class="form-control" style="color: orange;" formControlName='rating'></rating></li>
-                        <li class="list-inline-item align-top"><button class="btn btn btn-info mr-2"  (click)="submitForm()">Save</button></li>
+                        <li class="list-inline-item"><rating class="form-control" style="color: orange;" formControlName='grade'></rating></li>
+                        <li class="list-inline-item align-top"><button class="btn btn btn-info mr-2" type="submit">Save</button></li>
                         
                       </div>
                       
