@@ -61,14 +61,16 @@
 
           <!-- <button class="btn btn-primary mr-2" (click)="loadSubcategories()">Subcategories</button> -->
           <h4 style="color: black; margin-top: 30px; margin-bottom: 20px;">Choose subcategories: </h4>
-
-          <div *ngFor="let data of subcats; let i=index">
+        <div class="subcategories">
+            <div *ngFor="let data of subcats; let i=index">
               
-            <label>
-              <input type="checkbox" [value]="data.name" (change)="onCheckboxChangeSub($event)" />
-              {{data.name}}
-            </label>
-          </div>
+                <label>
+                  <input type="checkbox" [value]="data.name" (change)="onCheckboxChangeSub($event)" />
+                  {{data.name}}
+                </label>
+              </div>
+        </div>
+         
         
           <button [disabled]='!tripForm.valid' class="btn btn-primary btn-lg mr-2" type="submit" style="margin-top: 20px; ;">Submit</button>
           

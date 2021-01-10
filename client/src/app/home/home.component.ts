@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   subcats: Subcategory[] = [];
   cityParams: CityParams;
   cities: City[];
+
   
   //chosenCats: Category[];
 
@@ -147,7 +148,7 @@ export class HomeComponent implements OnInit {
         this.router.navigateByUrl('/trip-created');
       }, error => {
         console.log(error);
-        this.toastr.error(error.error);
+        this.toastr.error("You need to be logged in");
       })
    
     }
