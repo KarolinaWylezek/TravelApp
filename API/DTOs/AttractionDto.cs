@@ -11,6 +11,7 @@ namespace API.DTOs
         public string Theme { get; set; }
         public string Subtheme { get; set; }
         public DateTime DateTimeOfVisit { get; set; }
+        public bool WasVisited { get; set; }
        
     }
 }

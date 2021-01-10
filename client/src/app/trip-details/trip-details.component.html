@@ -15,7 +15,7 @@
         </li>
         
         
-            <input type="checkbox" class="ml-auto mb-auto mt-3" style="size:5cm; margin-right: 35%;">
+            <input type="checkbox" class="form-check-input" [checked]="attraction.wasVisited" (change)="checkAttraction(attraction.id) && loadAttractions()" class="ml-auto mb-auto mt-3" style="size:5cm; margin-right: 35%;">
            
     
     </div>

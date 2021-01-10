@@ -34,9 +34,15 @@ namespace API.Data
                 Type = query.Type,
                 Theme = query.Theme,
                 Subtheme = query.Subtheme,
-                DateTimeOfVisit = query.DateTimeOfVisit
+                DateTimeOfVisit = query.DateTimeOfVisit,
+                WasVisited = query.WasVisited
                 
             }).ToListAsync();
+        }
+
+        public async Task<Attraction> GetAttraction(int attId)
+        {
+            return await _context.Attractions.FindAsync(attId);
         }
 
         public async Task<Trip> GetUserTrip(int tripId)

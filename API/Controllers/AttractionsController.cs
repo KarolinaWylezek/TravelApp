@@ -15,8 +15,10 @@ namespace API.Controllers
         private readonly ITripsRepository _tripsRepository;
         private readonly IMapper _mapper;
         private readonly DataContext _context;
-        public AttractionsController(ITripsRepository tripsRepository, IMapper mapper, DataContext context)
+        private readonly ICityRepository _cityRepository;
+        public AttractionsController(ITripsRepository tripsRepository, IMapper mapper, DataContext context, ICityRepository cityRepository)
         {
+            _cityRepository = cityRepository;
             _context = context;
             _mapper = mapper;
             _tripsRepository = tripsRepository;
@@ -29,7 +31,16 @@ namespace API.Controllers
             return Ok(attractions);
         }
 
-        
+        [HttpGet("check/{attId}")]
+        public async Task<ActionResult> CheckAttraction(int attId)
+        {
+            var attraction = await _tripsRepository.GetAttraction(attId);
+            attraction.WasVisited = !attraction.WasVisited;
+
+            if (await _cityRepository.SaveAllAsync()) return NoContent();
+
+            return BadRequest("Request failed");
+        }
 
     }
 }

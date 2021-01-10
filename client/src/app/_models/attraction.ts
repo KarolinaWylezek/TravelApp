@@ -6,5 +6,6 @@ export interface Attraction {
    theme: string;
    subtheme: string;
    dateTimeOfVisit: Date;
+   wasVisited: boolean;
   }
 

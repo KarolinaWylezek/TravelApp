@@ -5,7 +5,7 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { RatingModule } from 'ngx-bootstrap/rating';
-//import {RatingModule} from "ngx-rating";
+
 
 
 @NgModule({

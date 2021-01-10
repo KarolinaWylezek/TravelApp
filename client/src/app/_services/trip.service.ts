@@ -59,6 +59,10 @@ export class TripService {
     return this.http.get<string[]>(this.baseUrl + 'categories/subcategories');
   }
 
+  checkAttraction(id: number) {
+    return this.http.get(this.baseUrl + 'attractions/check/' + id);
+  }
+
   private getPaginatedResult<T>(url, params) {
     const paginatedResult: PaginatedResult<T> = new PaginatedResult<T>();
     return this.http.get<T>(url, { observe: 'response', params }).pipe(

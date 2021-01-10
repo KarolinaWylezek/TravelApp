@@ -13,6 +13,7 @@ namespace API.Entities
         public string Theme { get; set; }
         public string Subtheme { get; set; }
         public DateTime DateTimeOfVisit { get; set; }
+        public bool WasVisited { get; set; } = false;
         public Trip Trip { get; set; }
         public int TripId { get; set; }
     }

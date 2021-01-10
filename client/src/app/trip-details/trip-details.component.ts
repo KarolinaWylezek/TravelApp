@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Attraction } from '../_models/attraction';
 import { Trip } from '../_models/trip';
+import { TripService } from '../_services/trip.service';
 import { UsersService } from '../_services/users.service';
 
 @Component({
@@ -11,8 +13,8 @@ import { UsersService } from '../_services/users.service';
 })
 export class TripDetailsComponent implements OnInit {
 trip: Trip;
-attractions: Partial<Attraction[]>;
-  constructor(private userService: UsersService, private route: ActivatedRoute) { }
+attractions: Attraction[];
+  constructor(private userService: UsersService, private route: ActivatedRoute, private tripService: TripService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.loadTrip();
@@ -29,6 +31,15 @@ attractions: Partial<Attraction[]>;
     this.userService.getAttractions(this.route.snapshot.paramMap.get('id')).subscribe(response => {
       this.attractions = response;
     })
+    }
+
+    checkAttraction(id: number) {
+      this.tripService.checkAttraction(id).subscribe(response => {
+        console.log(response);
+      }, error => {
+        console.log(error);
+        this.toastr.error(error.error);
+      })
     }
   }
 

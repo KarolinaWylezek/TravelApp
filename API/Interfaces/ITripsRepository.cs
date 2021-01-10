@@ -16,5 +16,6 @@ namespace API.Interfaces
          Task<IEnumerable<PlaceDto>> GetCategoryPlaces (string sCategory, int cityId);
          Task<IEnumerable<PlaceDto>> GetOtherPlaces (int cityId);
          Task<IEnumerable<int>> GetTripsId(int userId);
+         Task<Attraction> GetAttraction(int attId);
     }
 }
