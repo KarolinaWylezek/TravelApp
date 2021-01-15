@@ -17,24 +17,48 @@
         </div>
 
         <div class="form-group">
-            <input [class.is-invalid]='placeForm.get("openTime").errors && placeForm.get("openTime").touched' 
-            type="time" class="form-control" formControlName='openTime' placeholder="Open Time">
-
-            <div class="invalid-feedback">Opening time is obligatory</div>
+            <div class="form-row d-flex align-items-center">
+                <div class="form-group col-md-2">
+                    <p class="my-auto">Opening time:</p>
+                </div>
+                <div class="form-group col-md-3">
+                    <input [class.is-invalid]='placeForm.get("openTime").errors && placeForm.get("openTime").touched' 
+                    type="time" class="form-control" formControlName='openTime' placeholder="Open Time">
+                    <div class="invalid-feedback">Opening time is obligatory</div>
+                </div>
+                
+            </div>
+           
         </div>
 
         <div class="form-group">
-            <input [class.is-invalid]='placeForm.get("closeTime").errors && placeForm.get("closeTime").touched' 
-            type="time" class="form-control" formControlName='closeTime' placeholder="Close Time">
-
-            <div class="invalid-feedback">Closing is obligatory</div>
+            <div class="form-row d-flex align-items-center">
+                <div class="form-group col-md-2">
+                    <p class="my-auto">Closing time:</p>
+                </div>
+                <div class="form-group col-md-3"> <input [class.is-invalid]='placeForm.get("closeTime").errors && placeForm.get("closeTime").touched' 
+                    type="time" class="form-control" formControlName='closeTime' placeholder="Close Time">
+                    <div class="invalid-feedback">Closing is obligatory</div>
+                </div>
+                
+            </div>
+            
         </div>
 
         <div class="form-group">
-            <input [class.is-invalid]='placeForm.get("expectedTimeSpent").errors && placeForm.get("expectedTimeSpent").touched' 
-            type="time" class="form-control" formControlName='expectedTimeSpent' placeholder="Expected time spent">
-
-            <div class="invalid-feedback">Expected time spent is obligatory</div>
+            <div class="form-row d-flex align-items-center">
+                <div class="form-group col-md-2">
+                    <p class="my-auto">Expected time spent:</p>
+                </div>
+                <div class="form-group col-md-3">
+                    <input [class.is-invalid]='placeForm.get("expectedTimeSpent").errors && placeForm.get("expectedTimeSpent").touched' 
+                    type="time" class="form-control" formControlName='expectedTimeSpent' placeholder="Expected time spent">
+        
+                    <div class="invalid-feedback">Expected time spent is obligatory</div>
+                </div>
+                
+            </div>
+            
         </div>
 
 

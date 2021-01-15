@@ -38,7 +38,7 @@ namespace API.Controllers
             return Ok(events);
         }
 
-        //[Authorize(Policy = "ModerateCitiesRole")]
+        [Authorize(Policy = "ModerateCitiesRole")]
         [HttpPost("{cityId}/add-event")]
         public async Task<ActionResult<Event>> AddEvent(AddEventDto addEventDto, int cityId)
         {
