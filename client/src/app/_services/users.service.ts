@@ -4,7 +4,6 @@ import { environment } from 'src/environments/environment';
 import { Attraction } from '../_models/attraction';
 import { Member } from '../_models/member';
 import { Trip } from '../_models/trip';
-import { User } from '../_models/user';
 
 @Injectable({
   providedIn: 'root'

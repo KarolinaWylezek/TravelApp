@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { CanDeactivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
 import { EditUsernameComponent } from '../edit-username/edit-username.component';
 
 @Injectable({

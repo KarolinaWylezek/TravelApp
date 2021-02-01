@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { City } from 'src/app/_models/city';
 import { CityParams } from 'src/app/_models/cityParams';
 import { Pagination } from 'src/app/_models/pagination';

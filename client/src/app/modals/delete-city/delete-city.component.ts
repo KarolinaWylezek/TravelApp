@@ -4,7 +4,6 @@ import { EventEmitter } from 'events';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { City } from 'src/app/_models/city';
 import { AdminService } from 'src/app/_services/admin.service';
-import { CitiesService } from 'src/app/_services/cities.service';
 
 @Component({
   selector: 'app-delete-city',

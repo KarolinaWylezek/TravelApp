@@ -7,7 +7,6 @@ using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
@@ -29,8 +28,7 @@ namespace API.Data
 
         public async Task<PagedList<CityDto>> GetCitiesDtoAsync(Params cityParams)
         {
-            // var query = _context.Cities.ProjectTo<CityDto>(_mapper.ConfigurationProvider).AsNoTracking();
-            // return await PagedList<CityDto>.CreateAsync(query, cityParams.pageNumber, cityParams.PageSize);
+           
 
             var query = _context.Cities.AsQueryable();
             if (cityParams.SelectedCountry == "All") 

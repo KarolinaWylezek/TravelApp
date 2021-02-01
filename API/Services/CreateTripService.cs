@@ -5,7 +5,6 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using API.DTOs;
-using API.Entities;
 using API.Interfaces;
 using AutoMapper;
 
@@ -33,7 +32,6 @@ namespace API.Services
              IEnumerable<PlaceDto> subcategoryPlacesPromo = new Collection<PlaceDto>();
              IEnumerable<PlaceDto> subcategoryPlacesOthers = new Collection<PlaceDto>();
 
-            // int x =  createTripDto.Subcategory.Count;
 
              DateTime sightseeingFinish = DateTime.ParseExact(createTripDto.FinishOfSightseeing, "HH:mm", CultureInfo.InvariantCulture);
 

@@ -9,7 +9,6 @@ import { AccountService } from '../_services/account.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  //model: any = {};
   registerForm: FormGroup;
 
   constructor(private accountService: AccountService, private toastr: ToastrService) { }

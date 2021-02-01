@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using API.DTOs;
 using API.Entities;
 using AutoMapper;
@@ -12,7 +11,6 @@ namespace API.Helpers
             CreateMap<City, CityDto>();
             CreateMap<Event, EventDto>();
             CreateMap<Place, PlaceDto>();
-            //CreateMap<AppUser, UserDto>();
             CreateMap<RegisterDto, AppUser>();
             CreateMap<UserUpdateDto, AppUser>();
             CreateMap<AppUser, MemberDto>();
@@ -23,11 +21,7 @@ namespace API.Helpers
             CreateMap<EventEditDto, Event>();
             CreateMap<PlaceEditDto, Place>();
             CreateMap<Category, CategoryDto>();
-            // CreateMap<IList<EventDto>, IList<Attraction>>();
-            // CreateMap<IList<Attraction>, IList<EventDto>>();
-            //CreateMap<AttractionDto, EventDto>();
             CreateMap<EventDto, AttractionDto>().ForMember(x => x.Id, opt => opt.Ignore());
-           // CreateMap<AttractionDto, PlaceDto>();
             CreateMap<PlaceDto, AttractionDto>().ForMember(x => x.Id, opt => opt.Ignore());
           
         }

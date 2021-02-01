@@ -4,7 +4,6 @@ import { City } from '../_models/city';
 import { Pagination } from '../_models/pagination';
 import { Place } from '../_models/place';
 import { PlacesParams } from '../_models/placesParams';
-import { Subcategory } from '../_models/subcategory';
 import { CitiesService } from '../_services/cities.service';
 import { TripService } from '../_services/trip.service';
 
